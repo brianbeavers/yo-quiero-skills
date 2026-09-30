@@ -1,6 +1,6 @@
-# Sample brief (trial) — Team onboarding
+# Sample brief (trial): Team onboarding
 
-**Product:** Hertz internal ops tool — first-week onboarding for new ops agents  
+**Product:** Internal ops tool: first-week onboarding for new ops agents  
 **Job:** Get a new hire productive on their first three workflows without shadowing a senior all day  
 **Audience:** New ops hires (desktop, often noisy warehouse/office mix); managers reviewing progress  
 **Type:** Net-new surface inside an existing admin app  

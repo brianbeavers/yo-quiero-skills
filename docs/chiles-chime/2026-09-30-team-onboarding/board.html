@@ -3,38 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Taco Bell Mode: Team Onboarding</title>
-  <!--
-    Colors pulled from tacobell.com CSS (#501098 purple, #9a23f8 bright purple,
-    #d60068 magenta, #fee101 yellow, #f4f4f4 / #585858 neutrals).
-    Fonts: TB site uses Interstate (display) + GT America (UI). Those faces are
-    proprietary, so this board uses close public stand-ins via Google Fonts:
-    Barlow Condensed ≈ Interstate, DM Sans ≈ GT America.
-  -->
+  <title>Chiles Chime: Team Onboarding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --tb-purple: #501098;
-      --tb-purple-deep: #38096c;
-      --tb-purple-bright: #9a23f8;
-      --tb-magenta: #d60068;
-      --tb-magenta-hot: #ef2962;
-      --tb-pink: #ea42d1;
-      --tb-yellow: #fee101;
-      --tb-orange: #ff8a2d;
-      --tb-ink: #1b0026;
-      --tb-muted: #585858;
-      --tb-line: #dedede;
-      --tb-wash: #f4f4f4;
-      --tb-white: #ffffff;
+      --ink: #1c1410;
+      --muted: #6a5a4e;
+      --line: #e4d7c8;
+      --wash: #f7f1e8;
+      --card: #fffaf3;
+      --chile: #b33a1a;
+      --chile-deep: #6e1f0f;
+      --roasted: #2f4a28;
+      --sun: #e8a317;
 
-      /* Sauce packet accents (heat ladder) on brand canvas */
-      --mild: #008005;
-      --hot: #ff8a2d;
-      --fire: #d60068;
-      --diablo: #1b0026;
+      --mild: #2f6f3e;
+      --hot: #c47a1a;
+      --spicy: #c43b1a;
+      --inferno: #5b1a1a;
 
       --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
       --body: "DM Sans", Arial, Helvetica, sans-serif;
@@ -43,18 +31,18 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      color: var(--tb-ink);
-      background: var(--tb-white);
+      color: var(--ink);
+      background: var(--wash);
       font-family: var(--body);
       line-height: 1.45;
     }
 
     .hero {
       background:
-        radial-gradient(ellipse 70% 80% at 85% 20%, color-mix(in srgb, var(--tb-purple-bright) 35%, transparent), transparent 55%),
-        radial-gradient(ellipse 50% 60% at 10% 90%, color-mix(in srgb, var(--tb-magenta) 28%, transparent), transparent 50%),
-        linear-gradient(135deg, var(--tb-purple-deep) 0%, var(--tb-purple) 55%, #71009f 100%);
-      color: var(--tb-white);
+        radial-gradient(ellipse 70% 80% at 90% 10%, color-mix(in srgb, var(--sun) 35%, transparent), transparent 55%),
+        radial-gradient(ellipse 50% 60% at 5% 100%, color-mix(in srgb, var(--roasted) 40%, transparent), transparent 50%),
+        linear-gradient(135deg, var(--chile-deep) 0%, var(--chile) 60%, #d45a28 100%);
+      color: white;
       padding: 2.25rem 1.5rem 1.75rem;
     }
     .hero-inner { max-width: 1400px; margin: 0 auto; }
@@ -64,7 +52,7 @@
       font-size: 0.95rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--tb-yellow);
+      color: var(--sun);
       margin: 0 0 0.5rem;
     }
     .hero h1 {
@@ -82,13 +70,12 @@
       max-width: 40rem;
       font-size: 1.05rem;
       font-weight: 500;
-      color: color-mix(in srgb, white 88%, var(--tb-purple-bright));
+      color: color-mix(in srgb, white 90%, var(--sun));
     }
-    .hero strong { color: var(--tb-yellow); font-weight: 700; }
 
     .legend-wrap {
-      background: var(--tb-wash);
-      border-bottom: 1px solid var(--tb-line);
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
     }
     .legend {
       display: flex;
@@ -98,7 +85,7 @@
       margin: 0 auto;
       padding: 0.85rem 1.5rem;
       font-size: 0.85rem;
-      color: var(--tb-muted);
+      color: var(--muted);
     }
     .legend strong {
       font-family: var(--display);
@@ -114,7 +101,6 @@
       padding: 1.25rem 1.5rem 2.5rem;
       max-width: 1400px;
       margin: 0 auto;
-      background: var(--tb-wash);
     }
     @media (max-width: 1100px) {
       .board { grid-template-columns: repeat(2, 1fr); }
@@ -124,8 +110,8 @@
     }
 
     .col {
-      background: var(--tb-white);
-      border: 2px solid var(--tb-ink);
+      background: var(--card);
+      border: 2px solid var(--ink);
       display: flex;
       flex-direction: column;
       min-height: 100%;
@@ -141,13 +127,13 @@
 
     .label {
       padding: 1rem 1rem 0.85rem;
-      border-bottom: 2px solid var(--tb-ink);
+      border-bottom: 2px solid var(--ink);
     }
     .mild .label { background: color-mix(in srgb, var(--mild) 12%, white); }
     .hot .label { background: color-mix(in srgb, var(--hot) 16%, white); }
-    .fire .label { background: color-mix(in srgb, var(--fire) 12%, white); }
-    .diablo .label { background: var(--diablo); color: white; }
-    .diablo .why { color: color-mix(in srgb, white 72%, var(--tb-purple-bright)); }
+    .spicy .label { background: color-mix(in srgb, var(--spicy) 12%, white); }
+    .inferno .label { background: var(--inferno); color: white; }
+    .inferno .why { color: color-mix(in srgb, white 75%, var(--sun)); }
 
     .badge {
       display: inline-block;
@@ -163,11 +149,11 @@
     }
     .mild .badge { color: var(--mild); background: white; }
     .hot .badge { color: #b85a00; background: white; border-color: #b85a00; }
-    .fire .badge { color: var(--fire); background: white; }
-    .diablo .badge {
-      color: var(--tb-ink);
-      background: var(--tb-yellow);
-      border-color: var(--tb-yellow);
+    .spicy .badge { color: var(--spicy); background: white; }
+    .inferno .badge {
+      color: var(--ink);
+      background: var(--sun);
+      border-color: var(--sun);
     }
 
     .label h2 {
@@ -179,7 +165,7 @@
       letter-spacing: 0.02em;
       margin: 0 0 0.35rem;
     }
-    .why { font-size: 0.88rem; color: var(--tb-muted); margin: 0; font-weight: 500; }
+    .why { font-size: 0.88rem; color: var(--muted); margin: 0; font-weight: 500; }
 
     .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
     .thesis { font-size: 0.95rem; margin: 0; font-weight: 500; }
@@ -190,17 +176,17 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--tb-purple);
+      color: var(--chile);
       margin: 0 0 0.35rem;
     }
-    .diablo .section h3 { color: var(--tb-purple-bright); }
+    .inferno .section h3 { color: var(--sun); }
     .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
     .section li { margin-bottom: 0.28rem; }
 
     .meta {
       margin-top: auto;
       padding-top: 0.85rem;
-      border-top: 2px dashed var(--tb-line);
+      border-top: 2px dashed var(--line);
       font-size: 0.85rem;
     }
     .meta p { margin: 0 0 0.4rem; }
@@ -210,24 +196,23 @@
       font-size: 1.05rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
-      color: var(--tb-purple);
+      color: var(--chile);
     }
-    .diablo .cost { color: var(--tb-magenta); }
+    .inferno .cost { color: var(--sun); }
 
     footer {
       max-width: 1400px;
       margin: 0 auto;
       padding: 0 1.5rem 2.75rem;
-      color: var(--tb-muted);
+      color: var(--muted);
       font-size: 0.88rem;
-      background: var(--tb-wash);
     }
-    footer strong { color: var(--tb-purple); }
+    footer strong { color: var(--chile-deep); }
     footer code {
       font-family: var(--body);
       font-size: 0.8rem;
-      background: white;
-      border: 1px solid var(--tb-line);
+      background: var(--card);
+      border: 1px solid var(--line);
       padding: 0.1rem 0.35rem;
     }
   </style>
@@ -235,7 +220,7 @@
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Taco Bell Mode</p>
+      <p class="eyebrow">Chiles Chime</p>
       <h1>Team Onboarding</h1>
       <p>
         Goal is the same in every column: help new ops hires learn their first three
@@ -248,8 +233,8 @@
     <div class="legend" aria-label="Spectrum legend">
       <span><strong style="color:var(--mild)">MILD</strong> Safe and simple</span>
       <span><strong style="color:#b85a00">HOT</strong> A clear step up</span>
-      <span><strong style="color:var(--fire)">FIRE</strong> Bigger build, bigger bet</span>
-      <span><strong style="color:var(--diablo)">DIABLO</strong> Swing for the fences</span>
+      <span><strong style="color:var(--spicy)">SPICY</strong> Bigger build, bigger bet</span>
+      <span><strong style="color:var(--inferno)">INFERNO</strong> Swing for the fences</span>
     </div>
   </div>
 
@@ -322,9 +307,9 @@
       </div>
     </article>
 
-    <article class="col fire">
+    <article class="col spicy">
       <div class="label">
-        <div class="badge">Fire</div>
+        <div class="badge">Spicy</div>
         <h2>Live Practice</h2>
         <p class="why">Practice in a fake version of the real tool, with coaching beside it.</p>
       </div>
@@ -356,9 +341,9 @@
       </div>
     </article>
 
-    <article class="col diablo">
+    <article class="col inferno">
       <div class="label">
-        <div class="badge">Diablo</div>
+        <div class="badge">Inferno</div>
         <h2>Always-on Coach</h2>
         <p class="why">Big swing. Help shows up in the live tool, not in a separate course.</p>
       </div>
@@ -394,8 +379,8 @@
 
   <footer>
     <p><strong>Must keep:</strong> SSO, role-based tasks, manager visibility, Chrome, WCAG AA, existing design tokens, no new mobile app.</p>
-    <p><strong>Mix ideas:</strong> Hot tracks with Fire practice on one workflow. Ship Mild now and Fire later. Fire UI with Diablo's ready-or-not score only.</p>
-    <p>Trial from <code>taco-bell-mode</code>. Colors from <a href="https://www.tacobell.com/" style="color:var(--tb-purple)">tacobell.com</a>.</p>
+    <p><strong>Mix ideas:</strong> Hot tracks with Spicy practice on one workflow. Ship Mild now and Spicy later. Spicy UI with Inferno's ready-or-not score only.</p>
+    <p>Trial from <code>chiles-chime-mode</code>.</p>
   </footer>
 </body>
 </html>
