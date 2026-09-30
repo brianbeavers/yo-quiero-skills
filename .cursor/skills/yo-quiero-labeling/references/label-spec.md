@@ -1,7 +1,7 @@
-# Chiles Chime Label Spec
+# Yo Quiero Label Spec
 
 Visual and copy rules for stakeholder labels placed **above** design frames,
-flows, and prototype screens. Shared with `chiles-chime-mode` when creating boards.
+flows, and prototype screens. Shared with `yo-quiero-mode` when creating boards.
 
 ## Heat identity
 
@@ -57,7 +57,7 @@ Prefer existing text styles from the file's design system when present. Fallback
 
 ### Naming in layers
 
-- Label group: `CC Label / <Heat> - <Concept>`
+- Label group: `YQ Label / <Heat> - <Concept>`
 - Badge: `Heat Badge`
 - Title: `Concept Name`
 - Subtitle: `Why This Heat`
@@ -74,7 +74,7 @@ Prefer existing text styles from the file's design system when present. Fallback
 
 ## Legend frame (optional but recommended)
 
-Create a frame `CC Spectrum Legend` on the same page:
+Create a frame `YQ Spectrum Legend` on the same page:
 
 ```
 Mild → Hot → Spicy → Inferno
@@ -89,9 +89,9 @@ Place it top-left or above the four-column board. Keep it compact.
 
 ## Mapping existing work to heats
 
-When the user asks to label work that wasn't created in chiles-chime-mode:
+When the user asks to label work that wasn't created in yo-quiero-mode:
 
-1. Infer heat from ambition signals (scope, new components, motion, eng risk). See sibling skill `chiles-chime-mode` → `references/spectrum.md`
+1. Infer heat from ambition signals (scope, new components, motion, eng risk). See sibling skill `yo-quiero-mode` → `references/spectrum.md`
 2. Confirm mapping in chat if ambiguous (especially Spicy vs Inferno)
 3. Apply labels; do not redesign screens unless asked
 
@@ -101,5 +101,5 @@ If Figma MCP is unavailable:
 
 - Propose rename scheme: `Mild - <Concept>`, `Hot - <Concept>`, …
 - Provide a markdown legend the user can paste into FigJam/slides
-- Optionally write `docs/chiles-chime/<date>-<topic>/labels.md` with the mapping table
-- For HTML boards from `chiles-chime-mode`, ensure each column already has heat chrome matching this spec
+- Optionally write `docs/yo-quiero/<date>-<topic>/labels.md` with the mapping table
+- For HTML boards from `yo-quiero-mode`, ensure each column already has heat chrome matching this spec

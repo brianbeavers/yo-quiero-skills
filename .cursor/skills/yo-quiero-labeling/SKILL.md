@@ -1,15 +1,15 @@
 ---
-name: chiles-chime-labeling
+name: yo-quiero-labeling
 description: >-
   Drop Mild / Hot / Spicy / Inferno labels above Figma design frames, flows, or
   prototype screens so stakeholders see ambition level at a glance. Use when the
-  user says chiles-chime-labeling, asks to heat-label a board, or wants spectrum
+  user says yo-quiero-labeling, asks to heat-label a board, or wants spectrum
   chrome on existing concepts. Not for inventing four new directions from a PRD
-  (use chiles-chime-mode).
+  (use yo-quiero-mode).
 disable-model-invocation: true
 ---
 
-# Chiles Chime Labeling: Spectrum Chrome for Stakeholders
+# Yo Quiero Labeling: Spectrum Chrome for Stakeholders
 
 Place consistent **Mild / Hot / Spicy / Inferno** labels **above** design
 frames, flows, and prototype screens. The product UI stays untouched; the chrome
@@ -17,20 +17,20 @@ communicates ambition level.
 
 ## When to use
 
-- User says `chiles-chime-labeling`, `/chiles-chime-labeling`, or "heat-label this"
+- User says `yo-quiero-labeling`, `/yo-quiero-labeling`, or "heat-label this"
 - A Figma board / prototype already has multiple concepts or flows to classify
-- Follow-up after `chiles-chime-mode` once frames exist
+- Follow-up after `yo-quiero-mode` once frames exist
 
 ## When not to use
 
-- Generating four new directions from a brief → `chiles-chime-mode`
+- Generating four new directions from a brief → `yo-quiero-mode`
 - Restyling the product UI itself to look "spicier"
 - Generic Figma component work unrelated to the spectrum
 
 ## Required reading
 
 1. [`references/label-spec.md`](references/label-spec.md) — anatomy, color, placement
-2. Sibling [`../chiles-chime-mode/references/spectrum.md`](../chiles-chime-mode/references/spectrum.md)
+2. Sibling [`../yo-quiero-mode/references/spectrum.md`](../yo-quiero-mode/references/spectrum.md)
    — how to infer heat when mapping isn't given
 
 ## Process
@@ -74,7 +74,7 @@ screen; later screens may use light tags (`SPICY 02`) if helpful.
 
 ### 4. Add the legend
 
-Unless the user declines, create a compact **`CC Spectrum Legend`** frame on the
+Unless the user declines, create a compact **`YQ Spectrum Legend`** frame on the
 page (copy from label-spec). Stakeholders should understand the ladder without a
 meeting preamble.
 
@@ -87,7 +87,7 @@ Check:
 - [ ] Labels above frames, not covering content
 - [ ] Consistent alignment and 24px gaps
 - [ ] Legend present
-- [ ] Layer names follow `CC Label / <Heat> - <Concept>`
+- [ ] Layer names follow `YQ Label / <Heat> - <Concept>`
 
 ### 6. Report
 
@@ -96,7 +96,7 @@ Reply with:
 - Mapping table (frame/flow → heat → concept name)
 - Link/page name where labels live
 - Any assumptions (inferred heats)
-- Offer to adjust mapping or hand back to `chiles-chime-mode` for a missing heat
+- Offer to adjust mapping or hand back to `yo-quiero-mode` for a missing heat
 
 ## Quality bar
 
@@ -107,6 +107,6 @@ Reply with:
 
 ## Triggers / aliases
 
-- `chiles-chime-labeling`
-- `/chiles-chime-labeling`
+- `yo-quiero-labeling`
+- `/yo-quiero-labeling`
 - "heat-label" / "label the heats" / "Mild Hot Spicy Inferno labels on this file"

@@ -1,4 +1,4 @@
-# Chiles Chime
+# Yo Quiero
 
 Cursor Agent Skills for presenting design options on a **Mild → Hot → Spicy → Inferno** ambition spectrum.
 
@@ -6,11 +6,11 @@ Cursor Agent Skills for presenting design options on a **Mild → Hot → Spicy 
 
 | Skill | Folder | Invoke with | Job |
 | --- | --- | --- | --- |
-| **chiles-chime-mode** | [`.cursor/skills/chiles-chime-mode/`](.cursor/skills/chiles-chime-mode/) | `chiles-chime-mode` or `/chiles-chime-mode` | From a PRD/brief → four ambition-level directions + **HTML board** |
-| **chiles-chime-labeling** | [`.cursor/skills/chiles-chime-labeling/`](.cursor/skills/chiles-chime-labeling/) | `chiles-chime-labeling` or `/chiles-chime-labeling` | Drop heat labels **above** existing Figma frames / prototype screens |
+| **yo-quiero-mode** | [`.cursor/skills/yo-quiero-mode/`](.cursor/skills/yo-quiero-mode/) | `yo-quiero-mode` or `/yo-quiero-mode` | From a PRD/brief → four ambition-level directions + **HTML board** |
+| **yo-quiero-labeling** | [`.cursor/skills/yo-quiero-labeling/`](.cursor/skills/yo-quiero-labeling/) | `yo-quiero-labeling` or `/yo-quiero-labeling` | Drop heat labels **above** existing Figma frames / prototype screens |
 
 Each skill is its own directory with its own `SKILL.md`. They share the ladder via
-[`chiles-chime-mode/references/spectrum.md`](.cursor/skills/chiles-chime-mode/references/spectrum.md).
+[`yo-quiero-mode/references/spectrum.md`](.cursor/skills/yo-quiero-mode/references/spectrum.md).
 Both set `disable-model-invocation: true`, so the agent only loads them when you
 invoke them.
 
@@ -22,13 +22,13 @@ invoke them.
 
 | You want… | Say… | Attach… |
 | --- | --- | --- |
-| Four new directions | `chiles-chime-mode` | PRD, requirements, or thin brief |
-| Labels on existing designs | `chiles-chime-labeling` | Figma file URL + which frames/flows |
+| Four new directions | `yo-quiero-mode` | PRD, requirements, or thin brief |
+| Labels on existing designs | `yo-quiero-labeling` | Figma file URL + which frames/flows |
 
 ### Example: mode
 
 ```text
-chiles-chime-mode
+yo-quiero-mode
 
 Here's our PRD for team onboarding. Give me Mild → Inferno directions.
 ```
@@ -36,7 +36,7 @@ Here's our PRD for team onboarding. Give me Mild → Inferno directions.
 ### Example: labeling
 
 ```text
-chiles-chime-labeling
+yo-quiero-labeling
 
 Figma: <file url>
 Label the four concept columns Mild / Hot / Spicy / Inferno and add the legend.
@@ -53,8 +53,8 @@ Label the four concept columns Mild / Hot / Spicy / Inferno and add the legend.
 
 ## Artifacts
 
-- **chiles-chime-mode (default):** HTML comparison board at `docs/chiles-chime/<date>-<topic>/board.html`
-- **chiles-chime-labeling:** Figma labels via Figma MCP + `figma-use`; if Figma isn't connected, markdown rename map + legend under `docs/chiles-chime/`
+- **yo-quiero-mode (default):** HTML comparison board at `docs/yo-quiero/<date>-<topic>/board.html`
+- **yo-quiero-labeling:** Figma labels via Figma MCP + `figma-use`; if Figma isn't connected, markdown rename map + legend under `docs/yo-quiero/`
 
 ### Figma prerequisite (labeling)
 
@@ -62,11 +62,11 @@ Label the four concept columns Mild / Hot / Spicy / Inferno and add the legend.
 2. Access to the target file
 3. Agent loads **`figma-use`** before any `use_figma` mutations (the skill instructs this)
 
-Label visual rules: [`.cursor/skills/chiles-chime-labeling/references/label-spec.md`](.cursor/skills/chiles-chime-labeling/references/label-spec.md)
+Label visual rules: [`.cursor/skills/yo-quiero-labeling/references/label-spec.md`](.cursor/skills/yo-quiero-labeling/references/label-spec.md)
 
 ## Trial run (in this repo)
 
-Sample outputs from a dry-run brief live under [`docs/chiles-chime/`](docs/chiles-chime/):
+Sample outputs from a dry-run brief live under [`docs/yo-quiero/`](docs/yo-quiero/):
 
 - Mode board: open the latest `board.html`
 - Labeling fallback: open the latest `labels.md` (used when Figma isn't available)
@@ -75,13 +75,13 @@ Sample outputs from a dry-run brief live under [`docs/chiles-chime/`](docs/chile
 
 ```text
 .cursor/skills/
-  chiles-chime-mode/
+  yo-quiero-mode/
     SKILL.md
     references/spectrum.md
-  chiles-chime-labeling/
+  yo-quiero-labeling/
     SKILL.md
     references/label-spec.md
-docs/chiles-chime/          # trial / generated boards
+docs/yo-quiero/          # trial / generated boards
 README.md
 ```
 

@@ -1,15 +1,15 @@
 ---
-name: chiles-chime-mode
+name: yo-quiero-mode
 description: >-
   Spin up four design directions on a Mild → Hot → Spicy → Inferno ambition
-  spectrum from a PRD or thin brief. Use when the user says chiles-chime-mode,
-  "chiles chime", "four heats", or wants stakeholder-ready concept options at
+  spectrum from a PRD or thin brief. Use when the user says yo-quiero-mode,
+  "yo quiero", "four heats", or wants stakeholder-ready concept options at
   increasing craft/complexity. Not for labeling existing Figma frames (use
-  chiles-chime-labeling) or building a single locked design.
+  yo-quiero-labeling) or building a single locked design.
 disable-model-invocation: true
 ---
 
-# Chiles Chime Mode: Four Heats From a Brief
+# Yo Quiero Mode: Four Heats From a Brief
 
 Generate **exactly four** concept directions for the same problem, calibrated to
 **Mild / Hot / Spicy / Inferno** ambition levels. Stakeholders should see how far
@@ -18,12 +18,12 @@ each option pushes, not just that the options look different.
 ## When to use
 
 - Greenfield or early exploration with a PRD, requirements doc, or thin brief
-- User says `chiles-chime-mode`, `/chiles-chime-mode`, or `chiles chime`
+- User says `yo-quiero-mode`, `/yo-quiero-mode`, or `yo quiero`
 - Need side-by-side options that map effort and risk, not only aesthetics
 
 ## When not to use
 
-- Labeling existing Figma frames/prototypes → `chiles-chime-labeling`
+- Labeling existing Figma frames/prototypes → `yo-quiero-labeling`
 - Implementing one already-chosen direction
 - Pure visual theme swaps with no ambition difference
 
@@ -91,7 +91,7 @@ Keep prose tight and human. No lorem. No emdashes. Use real product language fro
 **Default: HTML comparison board**
 
 Ship a self-contained **HTML comparison board** under
-`docs/chiles-chime/<YYYY-MM-DD>-<topic>/board.html` with four columns
+`docs/yo-quiero/<YYYY-MM-DD>-<topic>/board.html` with four columns
 (Mild | Hot | Spicy | Inferno), heat labels, concept titles, theses, UX bets,
 craft notes, tradeoffs, and build cost.
 
@@ -102,9 +102,9 @@ Also summarize the four heats in chat (comparison table + decision ask).
 If the user provides a Figma file URL/key and asks for Figma (or labeling next):
 
 1. Load `figma-use` (mandatory before any `use_figma` call)
-2. Create or clear a page named `Chiles Chime: <topic>`
+2. Create or clear a page named `Yo Quiero: <topic>`
 3. Lay out four columns matching the HTML board
-4. Hand off to `chiles-chime-labeling` for spectrum chrome above frames
+4. Hand off to `yo-quiero-labeling` for spectrum chrome above frames
 
 **Markdown-only** when the user explicitly wants prose and no board.
 
@@ -117,7 +117,7 @@ On follow-up:
 - Deepen one heat into flows/screens
 - Remix ("Spicy interaction model at Hot cost")
 - Regenerate a single heat without touching the others
-- Hand off to `chiles-chime-labeling` once frames exist in Figma
+- Hand off to `yo-quiero-labeling` once frames exist in Figma
 
 ## Output quality bar
 
@@ -130,7 +130,7 @@ On follow-up:
 
 Treat these as invocations of this skill:
 
-- `chiles-chime-mode`
-- `/chiles-chime-mode`
-- "chiles chime" / "run chiles chime"
+- `yo-quiero-mode`
+- `/yo-quiero-mode`
+- "yo quiero" / "run yo quiero"
 - "four heats" / "sauce level concepts" (when asking for new directions)

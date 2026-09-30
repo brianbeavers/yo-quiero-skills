@@ -1,6 +1,6 @@
 # Mild → Inferno Spectrum
 
-Shared ambition ladder for `chiles-chime-mode` and `chiles-chime-labeling`.
+Shared ambition ladder for `yo-quiero-mode` and `yo-quiero-labeling`.
 Same product problem in every heat. Only ambition, craft, and complexity change.
 
 ## Ladder

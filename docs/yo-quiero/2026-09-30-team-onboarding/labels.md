@@ -1,7 +1,7 @@
-# Chiles Chime Labeling: trial (Figma fallback)
+# Yo Quiero Labeling: trial (Figma fallback)
 
 Figma MCP was not available for this trial, so this is the rename map + legend
-fallback from `chiles-chime-labeling`. In a real run with Figma connected, these
+fallback from `yo-quiero-labeling`. In a real run with Figma connected, these
 become label groups above each frame (24px gap), not overlays on the art.
 
 ## Spectrum legend
@@ -27,11 +27,11 @@ Assumes four concept columns from the mode trial board.
 ## Layer naming to apply in Figma
 
 ```
-CC Spectrum Legend
-CC Label / Mild - Checklist Home
-CC Label / Hot - Guided Tracks
-CC Label / Spicy - Live Practice
-CC Label / Inferno - Always-on Coach
+YQ Spectrum Legend
+YQ Label / Mild - Checklist Home
+YQ Label / Hot - Guided Tracks
+YQ Label / Spicy - Live Practice
+YQ Label / Inferno - Always-on Coach
 ```
 
 Badge text exactly: `MILD` / `HOT` / `SPICY` / `INFERNO`
@@ -46,9 +46,9 @@ Badge text exactly: `MILD` / `HOT` / `SPICY` / `INFERNO`
 ## Next step for a live Figma trial
 
 ```text
-chiles-chime-labeling
+yo-quiero-labeling
 
 Figma: <your file url>
-Use the mapping in docs/chiles-chime/2026-09-30-team-onboarding/labels.md
+Use the mapping in docs/yo-quiero/2026-09-30-team-onboarding/labels.md
 Add the legend and place labels above each concept column.
 ```
