@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yo Quiero: Team Onboarding</title>
+  <title>Chiles Chime: Team Onboarding</title>
+  <!--
+    Brand palette: #501098 purple, #9a23f8 bright purple, #d60068 magenta,
+    #fee101 yellow, #f4f4f4 / #585858 neutrals.
+    Display: Barlow Condensed. Body: DM Sans.
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #1c1410;
-      --muted: #6a5a4e;
-      --line: #e4d7c8;
-      --wash: #f7f1e8;
-      --card: #fffaf3;
-      --chile: #b33a1a;
-      --chile-deep: #6e1f0f;
-      --roasted: #2f4a28;
-      --sun: #e8a317;
+      --brand-purple: #501098;
+      --brand-purple-deep: #38096c;
+      --brand-purple-bright: #9a23f8;
+      --brand-magenta: #d60068;
+      --brand-magenta-hot: #ef2962;
+      --brand-pink: #ea42d1;
+      --brand-yellow: #fee101;
+      --brand-orange: #ff8a2d;
+      --brand-ink: #1b0026;
+      --brand-muted: #585858;
+      --brand-line: #dedede;
+      --brand-wash: #f4f4f4;
+      --brand-white: #ffffff;
 
-      --mild: #2f6f3e;
-      --hot: #c47a1a;
-      --spicy: #c43b1a;
-      --inferno: #5b1a1a;
+      /* Sauce packet accents (heat ladder) on brand canvas */
+      --mild: #008005;
+      --hot: #ff8a2d;
+      --spicy: #d60068;
+      --inferno: #1b0026;
 
       --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
       --body: "DM Sans", Arial, Helvetica, sans-serif;
@@ -31,18 +41,18 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      color: var(--ink);
-      background: var(--wash);
+      color: var(--brand-ink);
+      background: var(--brand-white);
       font-family: var(--body);
       line-height: 1.45;
     }
 
     .hero {
       background:
-        radial-gradient(ellipse 70% 80% at 90% 10%, color-mix(in srgb, var(--sun) 35%, transparent), transparent 55%),
-        radial-gradient(ellipse 50% 60% at 5% 100%, color-mix(in srgb, var(--roasted) 40%, transparent), transparent 50%),
-        linear-gradient(135deg, var(--chile-deep) 0%, var(--chile) 60%, #d45a28 100%);
-      color: white;
+        radial-gradient(ellipse 70% 80% at 85% 20%, color-mix(in srgb, var(--brand-purple-bright) 35%, transparent), transparent 55%),
+        radial-gradient(ellipse 50% 60% at 10% 90%, color-mix(in srgb, var(--brand-magenta) 28%, transparent), transparent 50%),
+        linear-gradient(135deg, var(--brand-purple-deep) 0%, var(--brand-purple) 55%, #71009f 100%);
+      color: var(--brand-white);
       padding: 2.25rem 1.5rem 1.75rem;
     }
     .hero-inner { max-width: 1400px; margin: 0 auto; }
@@ -52,7 +62,7 @@
       font-size: 0.95rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--sun);
+      color: var(--brand-yellow);
       margin: 0 0 0.5rem;
     }
     .hero h1 {
@@ -70,12 +80,13 @@
       max-width: 40rem;
       font-size: 1.05rem;
       font-weight: 500;
-      color: color-mix(in srgb, white 90%, var(--sun));
+      color: color-mix(in srgb, white 88%, var(--brand-purple-bright));
     }
+    .hero strong { color: var(--brand-yellow); font-weight: 700; }
 
     .legend-wrap {
-      background: var(--card);
-      border-bottom: 1px solid var(--line);
+      background: var(--brand-wash);
+      border-bottom: 1px solid var(--brand-line);
     }
     .legend {
       display: flex;
@@ -85,7 +96,7 @@
       margin: 0 auto;
       padding: 0.85rem 1.5rem;
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--brand-muted);
     }
     .legend strong {
       font-family: var(--display);
@@ -101,6 +112,7 @@
       padding: 1.25rem 1.5rem 2.5rem;
       max-width: 1400px;
       margin: 0 auto;
+      background: var(--brand-wash);
     }
     @media (max-width: 1100px) {
       .board { grid-template-columns: repeat(2, 1fr); }
@@ -110,8 +122,8 @@
     }
 
     .col {
-      background: var(--card);
-      border: 2px solid var(--ink);
+      background: var(--brand-white);
+      border: 2px solid var(--brand-ink);
       display: flex;
       flex-direction: column;
       min-height: 100%;
@@ -127,13 +139,13 @@
 
     .label {
       padding: 1rem 1rem 0.85rem;
-      border-bottom: 2px solid var(--ink);
+      border-bottom: 2px solid var(--brand-ink);
     }
     .mild .label { background: color-mix(in srgb, var(--mild) 12%, white); }
     .hot .label { background: color-mix(in srgb, var(--hot) 16%, white); }
     .spicy .label { background: color-mix(in srgb, var(--spicy) 12%, white); }
     .inferno .label { background: var(--inferno); color: white; }
-    .inferno .why { color: color-mix(in srgb, white 75%, var(--sun)); }
+    .inferno .why { color: color-mix(in srgb, white 72%, var(--brand-purple-bright)); }
 
     .badge {
       display: inline-block;
@@ -151,9 +163,9 @@
     .hot .badge { color: #b85a00; background: white; border-color: #b85a00; }
     .spicy .badge { color: var(--spicy); background: white; }
     .inferno .badge {
-      color: var(--ink);
-      background: var(--sun);
-      border-color: var(--sun);
+      color: var(--brand-ink);
+      background: var(--brand-yellow);
+      border-color: var(--brand-yellow);
     }
 
     .label h2 {
@@ -165,7 +177,7 @@
       letter-spacing: 0.02em;
       margin: 0 0 0.35rem;
     }
-    .why { font-size: 0.88rem; color: var(--muted); margin: 0; font-weight: 500; }
+    .why { font-size: 0.88rem; color: var(--brand-muted); margin: 0; font-weight: 500; }
 
     .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
     .thesis { font-size: 0.95rem; margin: 0; font-weight: 500; }
@@ -176,17 +188,17 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--chile);
+      color: var(--brand-purple);
       margin: 0 0 0.35rem;
     }
-    .inferno .section h3 { color: var(--sun); }
+    .inferno .section h3 { color: var(--brand-purple-bright); }
     .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
     .section li { margin-bottom: 0.28rem; }
 
     .meta {
       margin-top: auto;
       padding-top: 0.85rem;
-      border-top: 2px dashed var(--line);
+      border-top: 2px dashed var(--brand-line);
       font-size: 0.85rem;
     }
     .meta p { margin: 0 0 0.4rem; }
@@ -196,23 +208,24 @@
       font-size: 1.05rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
-      color: var(--chile);
+      color: var(--brand-purple);
     }
-    .inferno .cost { color: var(--sun); }
+    .inferno .cost { color: var(--brand-magenta); }
 
     footer {
       max-width: 1400px;
       margin: 0 auto;
       padding: 0 1.5rem 2.75rem;
-      color: var(--muted);
+      color: var(--brand-muted);
       font-size: 0.88rem;
+      background: var(--brand-wash);
     }
-    footer strong { color: var(--chile-deep); }
+    footer strong { color: var(--brand-purple); }
     footer code {
       font-family: var(--body);
       font-size: 0.8rem;
-      background: var(--card);
-      border: 1px solid var(--line);
+      background: white;
+      border: 1px solid var(--brand-line);
       padding: 0.1rem 0.35rem;
     }
   </style>
@@ -220,7 +233,7 @@
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Yo Quiero</p>
+      <p class="eyebrow">Chiles Chime</p>
       <h1>Team Onboarding</h1>
       <p>
         Goal is the same in every column: help new ops hires learn their first three
