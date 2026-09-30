@@ -104,6 +104,43 @@
       padding: 0.05rem 0.3rem;
     }
 
+    .skills-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin: 1rem 0 0;
+    }
+    .skills-links a {
+      display: inline-block;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: var(--brand-purple);
+      border: 2px solid var(--brand-ink);
+      padding: 0.45rem 0.75rem 0.35rem;
+    }
+    .skills-links a:hover {
+      background: var(--brand-purple-bright);
+    }
+    .skills-links .note {
+      flex: 1 1 100%;
+      margin: 0.15rem 0 0;
+      font-size: 0.8rem;
+      color: var(--brand-muted);
+    }
+
+    .example {
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 2px solid var(--brand-line);
+    }
+    .example:first-of-type {
+      margin-top: 1.25rem;
+    }
     .example-label {
       font-family: var(--display);
       font-weight: 800;
@@ -114,7 +151,7 @@
       margin: 0 0 0.35rem;
     }
     .example-brief {
-      margin: 0 0 1rem;
+      margin: 0 0 0.85rem;
       color: var(--brand-muted);
       font-size: 0.95rem;
       max-width: 40rem;
@@ -327,101 +364,276 @@
       <p style="margin: 0.85rem 0 0; font-size: 0.9rem; color: var(--brand-muted);">
         Invoke with <code>yo-quiero-mode</code>. Pair with <code>yo-quiero-labeling</code> to stamp heats on Figma frames.
       </p>
+      <div class="skills-links">
+        <!-- Placeholder until the repo is on GitHub. Replace YOUR_ORG/YOUR_REPO. -->
+        <a href="https://github.com/YOUR_ORG/YOUR_REPO/tree/main/.cursor/skills/yo-quiero-mode">yo-quiero-mode skill</a>
+        <a href="https://github.com/YOUR_ORG/YOUR_REPO/tree/main/.cursor/skills/yo-quiero-labeling">yo-quiero-labeling skill</a>
+        <p class="note">Placeholder GitHub links. Swap <code>YOUR_ORG/YOUR_REPO</code> after you push.</p>
+      </div>
     </section>
 
-    <p class="example-label">Tiny example</p>
-    <p class="example-brief">
-      Brief: “Help people leave a tip after checkout.” Same problem in every column. Only ambition changes.
-    </p>
-    <p class="cost-note">
-      Build cost at the bottom of each card is a rough guess of <strong>working days for eng and design</strong>
+    <p class="cost-note" style="margin-top: 1.25rem;">
+      Build cost on each card is a rough guess of <strong>working days for eng and design</strong>
       (focused build time). Not calendar days waiting on reviews, launches, or other teams.
     </p>
 
-    <div class="board">
-      <article class="col mild">
-        <div class="label">
-          <div class="badge">Mild</div>
-          <h3>Add a tip field</h3>
-        </div>
-        <div class="body">
-          <p class="idea">A tip amount field on the existing checkout form. Defaults to none.</p>
-          <ul class="signals">
-            <li>Impact: small</li>
-            <li>New UI: one input</li>
-            <li>Motion: none</li>
-            <li>Risk: low</li>
-          </ul>
-          <p class="cost">
-            <span class="cost-label">Eng + design working time</span>
-            <span class="cost-value">About 1 day</span>
-          </p>
-        </div>
-      </article>
+    <section class="example">
+      <p class="example-label">Example 1: Tip after checkout</p>
+      <p class="example-brief">
+        Brief: “Help people leave a tip after checkout.” Same problem in every column. Only ambition changes.
+      </p>
+      <div class="board">
+        <article class="col mild">
+          <div class="label">
+            <div class="badge">Mild</div>
+            <h3>Add a tip field</h3>
+          </div>
+          <div class="body">
+            <p class="idea">A tip amount field on the existing checkout form. Defaults to none.</p>
+            <ul class="signals">
+              <li>Impact: small</li>
+              <li>New UI: one input</li>
+              <li>Motion: none</li>
+              <li>Risk: low</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 1 day</span>
+            </p>
+          </div>
+        </article>
+        <article class="col hot">
+          <div class="label">
+            <div class="badge">Hot</div>
+            <h3>Tip presets</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Quick picks (10% / 15% / 20% / custom) under the total, with a clear selected state.</p>
+            <ul class="signals">
+              <li>Impact: clearer conversion</li>
+              <li>New UI: chip group</li>
+              <li>Motion: light select</li>
+              <li>Risk: low to medium</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 2 to 4 days</span>
+            </p>
+          </div>
+        </article>
+        <article class="col spicy">
+          <div class="label">
+            <div class="badge">Spicy</div>
+            <h3>Smart tip step</h3>
+          </div>
+          <div class="body">
+            <p class="idea">A short post-pay tip screen with suggested amounts based on order size, plus a thank-you moment.</p>
+            <ul class="signals">
+              <li>Impact: new step in flow</li>
+              <li>New UI: screen + logic</li>
+              <li>Motion: enter/exit</li>
+              <li>Risk: medium</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 1 to 2 weeks</span>
+            </p>
+          </div>
+        </article>
+        <article class="col inferno">
+          <div class="label">
+            <div class="badge">Inferno</div>
+            <h3>Tip as social layer</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Stretch: tip pools, crew shout-outs, optional public notes. Feels like a product of its own.</p>
+            <ul class="signals">
+              <li>Impact: new product surface</li>
+              <li>New UI: several systems</li>
+              <li>Motion: richer</li>
+              <li>Risk: high / bluesky</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">Multi-sprint stretch</span>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <article class="col hot">
-        <div class="label">
-          <div class="badge">Hot</div>
-          <h3>Tip presets</h3>
-        </div>
-        <div class="body">
-          <p class="idea">Quick picks (10% / 15% / 20% / custom) under the total, with a clear selected state.</p>
-          <ul class="signals">
-            <li>Impact: clearer conversion</li>
-            <li>New UI: chip group</li>
-            <li>Motion: light select</li>
-            <li>Risk: low to medium</li>
-          </ul>
-          <p class="cost">
-            <span class="cost-label">Eng + design working time</span>
-            <span class="cost-value">About 2 to 4 days</span>
-          </p>
-        </div>
-      </article>
+    <section class="example">
+      <p class="example-label">Example 2: Empty search</p>
+      <p class="example-brief">
+        Brief: “People search and get zero results. Help them recover.” Same problem. Ambition changes.
+      </p>
+      <div class="board">
+        <article class="col mild">
+          <div class="label">
+            <div class="badge">Mild</div>
+            <h3>Clear empty state</h3>
+          </div>
+          <div class="body">
+            <p class="idea">A plain “No results” message and a button to clear the query.</p>
+            <ul class="signals">
+              <li>Impact: small</li>
+              <li>New UI: copy + button</li>
+              <li>Motion: none</li>
+              <li>Risk: low</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About half a day</span>
+            </p>
+          </div>
+        </article>
+        <article class="col hot">
+          <div class="label">
+            <div class="badge">Hot</div>
+            <h3>Suggest next steps</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Show spelling fixes, popular nearby queries, and chips to remove active filters.</p>
+            <ul class="signals">
+              <li>Impact: fewer dead ends</li>
+              <li>New UI: suggestion list</li>
+              <li>Motion: light</li>
+              <li>Risk: low to medium</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 2 to 3 days</span>
+            </p>
+          </div>
+        </article>
+        <article class="col spicy">
+          <div class="label">
+            <div class="badge">Spicy</div>
+            <h3>Guided recovery</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Rewrite the query with live preview results, plus a “broaden search” control that relaxes filters.</p>
+            <ul class="signals">
+              <li>Impact: new recovery flow</li>
+              <li>New UI: preview + controls</li>
+              <li>Motion: result morph</li>
+              <li>Risk: medium</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 1 to 2 weeks</span>
+            </p>
+          </div>
+        </article>
+        <article class="col inferno">
+          <div class="label">
+            <div class="badge">Inferno</div>
+            <h3>Search co-pilot</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Stretch: chat beside search that asks what they meant, then builds a saved search they can share.</p>
+            <ul class="signals">
+              <li>Impact: new product surface</li>
+              <li>New UI: chat + save system</li>
+              <li>Motion: richer</li>
+              <li>Risk: high / bluesky</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">Multi-sprint stretch</span>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <article class="col spicy">
-        <div class="label">
-          <div class="badge">Spicy</div>
-          <h3>Smart tip step</h3>
-        </div>
-        <div class="body">
-          <p class="idea">A short post-pay tip screen with suggested amounts based on order size, plus a thank-you moment.</p>
-          <ul class="signals">
-            <li>Impact: new step in flow</li>
-            <li>New UI: screen + logic</li>
-            <li>Motion: enter/exit</li>
-            <li>Risk: medium</li>
-          </ul>
-          <p class="cost">
-            <span class="cost-label">Eng + design working time</span>
-            <span class="cost-value">About 1 to 2 weeks</span>
-          </p>
-        </div>
-      </article>
-
-      <article class="col inferno">
-        <div class="label">
-          <div class="badge">Inferno</div>
-          <h3>Tip as social layer</h3>
-        </div>
-        <div class="body">
-          <p class="idea">Stretch: tip pools, crew shout-outs, optional public notes. Feels like a product of its own.</p>
-          <ul class="signals">
-            <li>Impact: new product surface</li>
-            <li>New UI: several systems</li>
-            <li>Motion: richer</li>
-            <li>Risk: high / bluesky</li>
-          </ul>
-          <p class="cost">
-            <span class="cost-label">Eng + design working time</span>
-            <span class="cost-value">Multi-sprint stretch</span>
-          </p>
-        </div>
-      </article>
-    </div>
+    <section class="example">
+      <p class="example-label">Example 3: Invite a teammate</p>
+      <p class="example-brief">
+        Brief: “Let an admin invite someone to the workspace.” Same problem. Ambition changes.
+      </p>
+      <div class="board">
+        <article class="col mild">
+          <div class="label">
+            <div class="badge">Mild</div>
+            <h3>Email + send</h3>
+          </div>
+          <div class="body">
+            <p class="idea">One email field and a Send invite button on the existing members page.</p>
+            <ul class="signals">
+              <li>Impact: small</li>
+              <li>New UI: form row</li>
+              <li>Motion: none</li>
+              <li>Risk: low</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 1 day</span>
+            </p>
+          </div>
+        </article>
+        <article class="col hot">
+          <div class="label">
+            <div class="badge">Hot</div>
+            <h3>Role + invite link</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Pick a role, send email invites, or copy a link. Show pending invites in the list.</p>
+            <ul class="signals">
+              <li>Impact: clearer admin control</li>
+              <li>New UI: role select + link</li>
+              <li>Motion: light</li>
+              <li>Risk: low to medium</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 3 to 5 days</span>
+            </p>
+          </div>
+        </article>
+        <article class="col spicy">
+          <div class="label">
+            <div class="badge">Spicy</div>
+            <h3>Bulk invite board</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Paste many emails or upload CSV, assign roles in a table, track who accepted, remind the rest.</p>
+            <ul class="signals">
+              <li>Impact: new admin surface</li>
+              <li>New UI: table + upload</li>
+              <li>Motion: row status</li>
+              <li>Risk: medium</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">About 1 to 2 weeks</span>
+            </p>
+          </div>
+        </article>
+        <article class="col inferno">
+          <div class="label">
+            <div class="badge">Inferno</div>
+            <h3>Access simulator</h3>
+          </div>
+          <div class="body">
+            <p class="idea">Stretch: map people to teams, preview what they can see before invite, auto-suggest roles from org chart.</p>
+            <ul class="signals">
+              <li>Impact: new product surface</li>
+              <li>New UI: graph + preview</li>
+              <li>Motion: richer</li>
+              <li>Risk: high / bluesky</li>
+            </ul>
+            <p class="cost">
+              <span class="cost-label">Eng + design working time</span>
+              <span class="cost-value">Multi-sprint stretch</span>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <p class="invoke">
-      <strong>Point of the board:</strong> show how the skill ladders one idea. Not a full product design.
+      <strong>Point of the board:</strong> show how the skill ladders one idea four ways. Not a full product design.
     </p>
   </div>
 </body>
