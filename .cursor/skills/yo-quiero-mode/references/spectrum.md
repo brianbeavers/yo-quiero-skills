@@ -28,7 +28,10 @@ Score each concept roughly on these axes (0–3) so heats stay different:
 
 1. **Same problem.** All four options solve the same user job and respect locked constraints.
 2. **Ambition axis, not accent color.** If two heats differ only by palette or copy tone, regenerate.
-3. **Honest cost.** Every heat includes a plain build-cost line (e.g. `about 1 to 2 days`, `about 1 sprint`, `multi-sprint stretch`).
+3. **Honest cost.** Every heat includes a plain build-cost line for **eng + design working time**
+   (focused build effort), not calendar days waiting on reviews, launches, or other teams.
+   Examples: `about 1 working day`, `about 2 to 4 working days`, `about 1 to 2 weeks of eng/design`,
+   `multi-sprint stretch`.
 4. **Inferno can be aspirational.** Mark it as stretch so stakeholders can mix (e.g. Hot IA + Spicy motion).
 5. **Optimization vs net-new.** For optimization briefs, Mild stays close to the current UI. For greenfield, Mild is the safest conventional product pattern, not a blank wireframe.
 
