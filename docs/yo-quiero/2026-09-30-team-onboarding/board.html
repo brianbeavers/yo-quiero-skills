@@ -107,25 +107,14 @@
       .board { grid-template-columns: 1fr; }
     }
 
-    .mild {
-      background: linear-gradient(165deg, var(--mild) 0%, var(--mild-deep) 100%);
-    }
-    .hot {
-      background: linear-gradient(165deg, var(--hot) 0%, var(--hot-deep) 100%);
-    }
-    .spicy {
-      background: linear-gradient(165deg, var(--spicy) 0%, var(--spicy-deep) 100%);
-    }
-    .inferno {
-      background: linear-gradient(165deg, var(--inferno) 0%, var(--inferno-deep) 100%);
-    }
     .col {
       --crimp: 4px;
+      background: var(--brand-white);
       border: none;
       display: flex;
       flex-direction: column;
       min-height: 100%;
-      color: #fff;
+      color: var(--brand-ink);
       /* Tiny serrated top/bottom edges like a sealed sauce packet */
       clip-path: polygon(
         0% var(--crimp),
@@ -197,8 +186,20 @@
 
     .label {
       padding: 1rem 1rem 0.85rem;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.35);
-      background: transparent;
+      border-bottom: 2px solid var(--brand-ink);
+      color: #fff;
+    }
+    .mild .label {
+      background: linear-gradient(165deg, var(--mild) 0%, var(--mild-deep) 100%);
+    }
+    .hot .label {
+      background: linear-gradient(165deg, var(--hot) 0%, var(--hot-deep) 100%);
+    }
+    .spicy .label {
+      background: linear-gradient(165deg, var(--spicy) 0%, var(--spicy-deep) 100%);
+    }
+    .inferno .label {
+      background: linear-gradient(165deg, var(--inferno) 0%, var(--inferno-deep) 100%);
     }
 
     .badge {
@@ -233,18 +234,13 @@
     }
     .why {
       font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.88);
+      color: rgba(255, 255, 255, 0.9);
       margin: 0;
       font-weight: 500;
     }
 
     .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
-    .thesis {
-      font-size: 0.95rem;
-      margin: 0;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95);
-    }
+    .thesis { font-size: 0.95rem; margin: 0; font-weight: 500; }
 
     .section h3 {
       font-family: var(--display);
@@ -252,33 +248,26 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #fff;
+      color: var(--brand-purple);
       margin: 0 0 0.35rem;
     }
-    .section ul {
-      margin: 0;
-      padding-left: 1.1rem;
-      font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.92);
-    }
+    .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
     .section li { margin-bottom: 0.28rem; }
 
     .meta {
       margin-top: auto;
       padding-top: 0.85rem;
-      border-top: 2px dashed rgba(255, 255, 255, 0.4);
+      border-top: 2px dashed var(--brand-line);
       font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.92);
     }
     .meta p { margin: 0 0 0.4rem; }
-    .meta strong { color: #fff; }
     .cost {
       font-family: var(--display);
       font-weight: 800;
       font-size: 1.05rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
-      color: #fff;
+      color: var(--brand-purple);
     }
 
   </style>
