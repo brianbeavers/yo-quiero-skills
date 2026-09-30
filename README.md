@@ -66,9 +66,10 @@ Label visual rules: [`.cursor/skills/yo-quiero-labeling/references/label-spec.md
 
 ## How-it-works demo (in this repo)
 
-A short explainer board lives under [`docs/yo-quiero/`](docs/yo-quiero/):
+A short explainer board lives under [`docs/yo-quiero/how-it-works/`](docs/yo-quiero/how-it-works/):
 
-- Open [`how-it-works/board.html`](docs/yo-quiero/how-it-works/board.html) for the spectrum + a tiny tip-checkout example
+- Open [`board.html`](docs/yo-quiero/how-it-works/board.html) for the spectrum + three tiny examples
+- Placeholder GitHub links to the skills are on the page (`YOUR_ORG/YOUR_REPO` until you push)
 - This is a demo of how the skill ladders one idea, not a full product design
 
 ## Repo layout

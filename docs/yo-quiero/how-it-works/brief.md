@@ -1,7 +1,11 @@
-# Demo brief (how the skill works)
+# Demo briefs (how the skill works)
 
-This folder is a short demo of `yo-quiero-mode`, not a product design for onboarding.
+This folder is a short demo of `yo-quiero-mode`, not a full product design.
 
-**Example problem used on the board:** Help people leave a tip after checkout.
+Three example problems on the board:
 
-The four columns show Mild / Hot / Spicy / Inferno takes of that same idea, differing by impact, eng effort, complexity, new components/motion, and how bluesky they are.
+1. Help people leave a tip after checkout
+2. People search and get zero results. Help them recover
+3. Let an admin invite someone to the workspace
+
+Each row shows Mild / Hot / Spicy / Inferno takes of that same idea.
