@@ -4,63 +4,117 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Taco Bell Mode — Team Onboarding</title>
+  <!--
+    Colors pulled from tacobell.com CSS (#501098 purple, #9a23f8 bright purple,
+    #d60068 magenta, #fee101 yellow, #f4f4f4 / #585858 neutrals).
+    Fonts: TB site uses Interstate (display) + GT America (UI). Those faces are
+    proprietary, so this board uses close public stand-ins via Google Fonts:
+    Barlow Condensed ≈ Interstate, DM Sans ≈ GT America.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f6f3ee;
-      --ink: #1a1714;
-      --muted: #5c564e;
-      --card: #fffdf9;
-      --line: #e4ddd3;
-      --mild: #2f6f3e;
-      --hot: #c47a1a;
-      --fire: #c43b1a;
-      --diablo: #5b1a1a;
-      --font: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      --sans: "Avenir Next", "Segoe UI", sans-serif;
+      --tb-purple: #501098;
+      --tb-purple-deep: #38096c;
+      --tb-purple-bright: #9a23f8;
+      --tb-magenta: #d60068;
+      --tb-magenta-hot: #ef2962;
+      --tb-pink: #ea42d1;
+      --tb-yellow: #fee101;
+      --tb-orange: #ff8a2d;
+      --tb-ink: #1b0026;
+      --tb-muted: #585858;
+      --tb-line: #dedede;
+      --tb-wash: #f4f4f4;
+      --tb-white: #ffffff;
+
+      /* Sauce packet accents (heat ladder) on brand canvas */
+      --mild: #008005;
+      --hot: #ff8a2d;
+      --fire: #d60068;
+      --diablo: #1b0026;
+
+      --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      --body: "DM Sans", Arial, Helvetica, sans-serif;
     }
+
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(ellipse 80% 50% at 10% 0%, #efe6d8 0%, transparent 55%),
-        radial-gradient(ellipse 60% 40% at 90% 10%, #e8dcc8 0%, transparent 50%),
-        var(--bg);
-      font-family: var(--sans);
+      color: var(--tb-ink);
+      background: var(--tb-white);
+      font-family: var(--body);
       line-height: 1.45;
     }
-    header {
-      padding: 2rem 1.5rem 1rem;
-      max-width: 1400px;
-      margin: 0 auto;
+
+    .hero {
+      background:
+        radial-gradient(ellipse 70% 80% at 85% 20%, color-mix(in srgb, var(--tb-purple-bright) 35%, transparent), transparent 55%),
+        radial-gradient(ellipse 50% 60% at 10% 90%, color-mix(in srgb, var(--tb-magenta) 28%, transparent), transparent 50%),
+        linear-gradient(135deg, var(--tb-purple-deep) 0%, var(--tb-purple) 55%, #71009f 100%);
+      color: var(--tb-white);
+      padding: 2.25rem 1.5rem 1.75rem;
     }
-    header h1 {
-      font-family: var(--font);
-      font-size: clamp(1.75rem, 3vw, 2.4rem);
-      font-weight: 600;
-      margin: 0 0 0.35rem;
-      letter-spacing: -0.02em;
+    .hero-inner { max-width: 1400px; margin: 0 auto; }
+    .eyebrow {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tb-yellow);
+      margin: 0 0 0.5rem;
     }
-    header p { margin: 0; color: var(--muted); max-width: 52rem; }
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 3.75rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin: 0 0 0.75rem;
+      max-width: 16ch;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 40rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: color-mix(in srgb, white 88%, var(--tb-purple-bright));
+    }
+    .hero strong { color: var(--tb-yellow); font-weight: 700; }
+
+    .legend-wrap {
+      background: var(--tb-wash);
+      border-bottom: 1px solid var(--tb-line);
+    }
     .legend {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem 1.25rem;
-      margin: 1.25rem 0 0;
-      padding: 0.9rem 1rem;
-      background: var(--card);
-      border: 1px solid var(--line);
+      gap: 0.65rem 1.5rem;
       max-width: 1400px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--tb-muted);
     }
-    .legend span { font-size: 0.8rem; color: var(--muted); }
-    .legend strong { color: var(--ink); font-weight: 700; letter-spacing: 0.04em; }
+    .legend strong {
+      font-family: var(--display);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+    }
+
     .board {
       display: grid;
       grid-template-columns: repeat(4, minmax(240px, 1fr));
       gap: 1rem;
-      padding: 1rem 1.5rem 3rem;
+      padding: 1.25rem 1.5rem 2.5rem;
       max-width: 1400px;
       margin: 0 auto;
+      background: var(--tb-wash);
     }
     @media (max-width: 1100px) {
       .board { grid-template-columns: repeat(2, 1fr); }
@@ -68,92 +122,141 @@
     @media (max-width: 640px) {
       .board { grid-template-columns: 1fr; }
     }
+
     .col {
-      background: var(--card);
-      border: 1px solid var(--line);
+      background: var(--tb-white);
+      border: 2px solid var(--tb-ink);
       display: flex;
       flex-direction: column;
       min-height: 100%;
-      animation: rise 0.55s ease both;
+      animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
-    .col:nth-child(2) { animation-delay: 0.08s; }
-    .col:nth-child(3) { animation-delay: 0.16s; }
-    .col:nth-child(4) { animation-delay: 0.24s; }
+    .col:nth-child(2) { animation-delay: 0.07s; }
+    .col:nth-child(3) { animation-delay: 0.14s; }
+    .col:nth-child(4) { animation-delay: 0.21s; }
     @keyframes rise {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: none; }
     }
+
     .label {
-      padding: 1rem 1rem 0.75rem;
-      border-bottom: 1px solid var(--line);
+      padding: 1rem 1rem 0.85rem;
+      border-bottom: 2px solid var(--tb-ink);
     }
+    .mild .label { background: color-mix(in srgb, var(--mild) 12%, white); }
+    .hot .label { background: color-mix(in srgb, var(--hot) 16%, white); }
+    .fire .label { background: color-mix(in srgb, var(--fire) 12%, white); }
+    .diablo .label { background: var(--diablo); color: white; }
+    .diablo .why { color: color-mix(in srgb, white 72%, var(--tb-purple-bright)); }
+
     .badge {
       display: inline-block;
-      font-size: 0.7rem;
+      font-family: var(--display);
+      font-size: 0.95rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      padding: 0.3rem 0.55rem;
-      border-radius: 999px;
-      margin-bottom: 0.45rem;
-    }
-    .mild .badge { color: var(--mild); background: color-mix(in srgb, var(--mild) 16%, white); }
-    .hot .badge { color: var(--hot); background: color-mix(in srgb, var(--hot) 16%, white); }
-    .fire .badge { color: var(--fire); background: color-mix(in srgb, var(--fire) 16%, white); }
-    .diablo .badge { color: #fff; background: var(--diablo); }
-    .label h2 {
-      font-family: var(--font);
-      font-size: 1.25rem;
-      margin: 0 0 0.25rem;
-    }
-    .why { font-size: 0.82rem; color: var(--muted); margin: 0; }
-    .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.85rem; flex: 1; }
-    .thesis { font-size: 0.92rem; margin: 0; }
-    .section h3 {
-      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.55rem 0.1rem;
+      border-radius: 2px;
+      margin-bottom: 0.4rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
+      border: 2px solid currentColor;
+    }
+    .mild .badge { color: var(--mild); background: white; }
+    .hot .badge { color: #b85a00; background: white; border-color: #b85a00; }
+    .fire .badge { color: var(--fire); background: white; }
+    .diablo .badge {
+      color: var(--tb-ink);
+      background: var(--tb-yellow);
+      border-color: var(--tb-yellow);
+    }
+
+    .label h2 {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.65rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
       margin: 0 0 0.35rem;
     }
-    .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.85rem; }
-    .section li { margin-bottom: 0.25rem; }
+    .why { font-size: 0.88rem; color: var(--tb-muted); margin: 0; font-weight: 500; }
+
+    .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
+    .thesis { font-size: 0.95rem; margin: 0; font-weight: 500; }
+
+    .section h3 {
+      font-family: var(--display);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tb-purple);
+      margin: 0 0 0.35rem;
+    }
+    .diablo .section h3 { color: var(--tb-purple-bright); }
+    .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
+    .section li { margin-bottom: 0.28rem; }
+
     .meta {
       margin-top: auto;
-      padding-top: 0.75rem;
-      border-top: 1px dashed var(--line);
-      font-size: 0.8rem;
+      padding-top: 0.85rem;
+      border-top: 2px dashed var(--tb-line);
+      font-size: 0.85rem;
     }
     .meta p { margin: 0 0 0.4rem; }
-    .cost { font-weight: 700; }
+    .cost {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--tb-purple);
+    }
+    .diablo .cost { color: var(--tb-magenta); }
+
     footer {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 1.5rem 2.5rem;
-      color: var(--muted);
-      font-size: 0.85rem;
+      padding: 0 1.5rem 2.75rem;
+      color: var(--tb-muted);
+      font-size: 0.88rem;
+      background: var(--tb-wash);
     }
-    footer code { font-size: 0.8rem; }
+    footer strong { color: var(--tb-purple); }
+    footer code {
+      font-family: var(--body);
+      font-size: 0.8rem;
+      background: white;
+      border: 1px solid var(--tb-line);
+      padding: 0.1rem 0.35rem;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Taco Bell Mode — Team Onboarding</h1>
-    <p>
-      Same job for every column: get new ops hires productive on their first three workflows
-      without full-time senior shadowing. Only <strong>ambition level</strong> changes.
-    </p>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Taco Bell Mode · Ambition Spectrum</p>
+      <h1>Team Onboarding</h1>
+      <p>
+        Same job for every column: get new ops hires productive on their first three workflows
+        without full-time senior shadowing. Only <strong>ambition level</strong> changes.
+      </p>
+    </div>
+  </header>
+
+  <div class="legend-wrap">
     <div class="legend" aria-label="Spectrum legend">
       <span><strong style="color:var(--mild)">MILD</strong> Safe / conventional</span>
-      <span><strong style="color:var(--hot)">HOT</strong> Clear step up</span>
+      <span><strong style="color:#b85a00">HOT</strong> Clear step up</span>
       <span><strong style="color:var(--fire)">FIRE</strong> Ambitious + eng lift</span>
       <span><strong style="color:var(--diablo)">DIABLO</strong> Stretch / 200%</span>
     </div>
-  </header>
+  </div>
 
   <div class="board">
     <article class="col mild">
       <div class="label">
-        <div class="badge">MILD</div>
+        <div class="badge">Mild</div>
         <h2>Checklist Home</h2>
         <p class="why">Safest shippable path using patterns managers already know.</p>
       </div>
@@ -187,7 +290,7 @@
 
     <article class="col hot">
       <div class="label">
-        <div class="badge">HOT</div>
+        <div class="badge">Hot</div>
         <h2>Guided Tracks</h2>
         <p class="why">Noticeable upgrade—structured tracks without inventing a new product.</p>
       </div>
@@ -221,7 +324,7 @@
 
     <article class="col fire">
       <div class="label">
-        <div class="badge">FIRE</div>
+        <div class="badge">Fire</div>
         <h2>Live Shadow Mode</h2>
         <p class="why">Ambitious: practice inside real UI with safe rails and new interaction model.</p>
       </div>
@@ -255,7 +358,7 @@
 
     <article class="col diablo">
       <div class="label">
-        <div class="badge">DIABLO</div>
+        <div class="badge">Diablo</div>
         <h2>Adaptive Co-Pilot</h2>
         <p class="why">Stretch moonshot—onboarding becomes a persistent AI co-worker, not a course.</p>
       </div>
@@ -292,7 +395,7 @@
   <footer>
     <p><strong>Constants locked:</strong> SSO · role-based tasks · manager visibility · Chrome · WCAG AA · existing design tokens · no new mobile app.</p>
     <p><strong>Mix ideas:</strong> Hot tracks + Fire sandbox for one workflow · Mild checklist now, Fire later · Fire UI with Diablo readiness scoring only.</p>
-    <p>Trial artifact from <code>taco-bell-mode</code> · <code>docs/taco-bell/2026-09-30-team-onboarding/board.html</code></p>
+    <p>Trial artifact from <code>taco-bell-mode</code> · styled after <a href="https://www.tacobell.com/" style="color:var(--tb-purple)">tacobell.com</a> colors · <code>docs/taco-bell/2026-09-30-team-onboarding/board.html</code></p>
   </footer>
 </body>
 </html>
