@@ -28,11 +28,15 @@
       --brand-wash: #f4f4f4;
       --brand-white: #ffffff;
 
-      /* Heat ladder accents */
-      --mild: #008005;
-      --hot: #ff8a2d;
-      --spicy: #d60068;
-      --inferno: #1b0026;
+      /* Heat ladder accents (deeper packet fills) */
+      --mild: #0f8a32;
+      --mild-deep: #066224;
+      --hot: #e85d0c;
+      --hot-deep: #b84400;
+      --spicy: #d1124f;
+      --spicy-deep: #9a0a38;
+      --inferno: #3a1460;
+      --inferno-deep: #1b0026;
 
       --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
       --body: "DM Sans", Arial, Helvetica, sans-serif;
@@ -103,13 +107,25 @@
       .board { grid-template-columns: 1fr; }
     }
 
+    .mild {
+      background: linear-gradient(165deg, var(--mild) 0%, var(--mild-deep) 100%);
+    }
+    .hot {
+      background: linear-gradient(165deg, var(--hot) 0%, var(--hot-deep) 100%);
+    }
+    .spicy {
+      background: linear-gradient(165deg, var(--spicy) 0%, var(--spicy-deep) 100%);
+    }
+    .inferno {
+      background: linear-gradient(165deg, var(--inferno) 0%, var(--inferno-deep) 100%);
+    }
     .col {
       --crimp: 4px;
-      background: var(--brand-white);
       border: none;
       display: flex;
       flex-direction: column;
       min-height: 100%;
+      color: #fff;
       /* Tiny serrated top/bottom edges like a sealed sauce packet */
       clip-path: polygon(
         0% var(--crimp),
@@ -181,13 +197,9 @@
 
     .label {
       padding: 1rem 1rem 0.85rem;
-      border-bottom: 2px solid var(--brand-ink);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
     }
-    .mild .label { background: color-mix(in srgb, var(--mild) 12%, white); }
-    .hot .label { background: color-mix(in srgb, var(--hot) 16%, white); }
-    .spicy .label { background: color-mix(in srgb, var(--spicy) 12%, white); }
-    .inferno .label { background: var(--inferno); color: white; }
-    .inferno .why { color: color-mix(in srgb, white 72%, var(--brand-purple-bright)); }
 
     .badge {
       display: inline-block;
@@ -199,11 +211,10 @@
       border-radius: 2px;
       margin-bottom: 0.4rem;
       text-transform: uppercase;
-      border: 2px solid currentColor;
+      color: #fff;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.95);
     }
-    .mild .badge { color: var(--mild); background: white; }
-    .hot .badge { color: #b85a00; background: white; border-color: #b85a00; }
-    .spicy .badge { color: var(--spicy); background: white; }
     .inferno .badge {
       color: var(--brand-ink);
       background: var(--brand-yellow);
@@ -218,11 +229,22 @@
       text-transform: uppercase;
       letter-spacing: 0.02em;
       margin: 0 0 0.35rem;
+      color: #fff;
     }
-    .why { font-size: 0.88rem; color: var(--brand-muted); margin: 0; font-weight: 500; }
+    .why {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0;
+      font-weight: 500;
+    }
 
     .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
-    .thesis { font-size: 0.95rem; margin: 0; font-weight: 500; }
+    .thesis {
+      font-size: 0.95rem;
+      margin: 0;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.95);
+    }
 
     .section h3 {
       font-family: var(--display);
@@ -230,29 +252,34 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--brand-purple);
+      color: #fff;
       margin: 0 0 0.35rem;
     }
-    .inferno .section h3 { color: var(--brand-purple-bright); }
-    .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
+    .section ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
     .section li { margin-bottom: 0.28rem; }
 
     .meta {
       margin-top: auto;
       padding-top: 0.85rem;
-      border-top: 2px dashed var(--brand-line);
+      border-top: 2px dashed rgba(255, 255, 255, 0.4);
       font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.92);
     }
     .meta p { margin: 0 0 0.4rem; }
+    .meta strong { color: #fff; }
     .cost {
       font-family: var(--display);
       font-weight: 800;
       font-size: 1.05rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
-      color: var(--brand-purple);
+      color: #fff;
     }
-    .inferno .cost { color: var(--brand-magenta); }
 
   </style>
 </head>
@@ -265,10 +292,10 @@
 
   <div class="legend-wrap">
     <div class="legend" aria-label="Spectrum legend">
-      <span><strong style="color:var(--mild)">MILD</strong> Safe and simple</span>
-      <span><strong style="color:#b85a00">HOT</strong> A clear step up</span>
-      <span><strong style="color:var(--spicy)">SPICY</strong> Bigger build, bigger bet</span>
-      <span><strong style="color:var(--inferno)">INFERNO</strong> Swing for the fences</span>
+      <span><strong style="color:var(--mild-deep)">MILD</strong> Safe and simple</span>
+      <span><strong style="color:var(--hot-deep)">HOT</strong> A clear step up</span>
+      <span><strong style="color:var(--spicy-deep)">SPICY</strong> Bigger build, bigger bet</span>
+      <span><strong style="color:var(--inferno-deep)">INFERNO</strong> Swing for the fences</span>
     </div>
   </div>
 
