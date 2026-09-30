@@ -104,11 +104,71 @@
     }
 
     .col {
+      --crimp: 4px;
       background: var(--brand-white);
-      border: 2px solid var(--brand-ink);
+      border: none;
       display: flex;
       flex-direction: column;
       min-height: 100%;
+      /* Tiny serrated top/bottom edges like a sealed sauce packet */
+      clip-path: polygon(
+        0% var(--crimp),
+        1.0417% 0px, 2.0833% var(--crimp), 3.1250% 0px, 4.1667% var(--crimp),
+        5.2083% 0px, 6.2500% var(--crimp), 7.2917% 0px, 8.3333% var(--crimp),
+        9.3750% 0px, 10.4167% var(--crimp), 11.4583% 0px, 12.5000% var(--crimp),
+        13.5417% 0px, 14.5833% var(--crimp), 15.6250% 0px, 16.6667% var(--crimp),
+        17.7083% 0px, 18.7500% var(--crimp), 19.7917% 0px, 20.8333% var(--crimp),
+        21.8750% 0px, 22.9167% var(--crimp), 23.9583% 0px, 25.0000% var(--crimp),
+        26.0417% 0px, 27.0833% var(--crimp), 28.1250% 0px, 29.1667% var(--crimp),
+        30.2083% 0px, 31.2500% var(--crimp), 32.2917% 0px, 33.3333% var(--crimp),
+        34.3750% 0px, 35.4167% var(--crimp), 36.4583% 0px, 37.5000% var(--crimp),
+        38.5417% 0px, 39.5833% var(--crimp), 40.6250% 0px, 41.6667% var(--crimp),
+        42.7083% 0px, 43.7500% var(--crimp), 44.7917% 0px, 45.8333% var(--crimp),
+        46.8750% 0px, 47.9167% var(--crimp), 48.9583% 0px, 50.0000% var(--crimp),
+        51.0417% 0px, 52.0833% var(--crimp), 53.1250% 0px, 54.1667% var(--crimp),
+        55.2083% 0px, 56.2500% var(--crimp), 57.2917% 0px, 58.3333% var(--crimp),
+        59.3750% 0px, 60.4167% var(--crimp), 61.4583% 0px, 62.5000% var(--crimp),
+        63.5417% 0px, 64.5833% var(--crimp), 65.6250% 0px, 66.6667% var(--crimp),
+        67.7083% 0px, 68.7500% var(--crimp), 69.7917% 0px, 70.8333% var(--crimp),
+        71.8750% 0px, 72.9167% var(--crimp), 73.9583% 0px, 75.0000% var(--crimp),
+        76.0417% 0px, 77.0833% var(--crimp), 78.1250% 0px, 79.1667% var(--crimp),
+        80.2083% 0px, 81.2500% var(--crimp), 82.2917% 0px, 83.3333% var(--crimp),
+        84.3750% 0px, 85.4167% var(--crimp), 86.4583% 0px, 87.5000% var(--crimp),
+        88.5417% 0px, 89.5833% var(--crimp), 90.6250% 0px, 91.6667% var(--crimp),
+        92.7083% 0px, 93.7500% var(--crimp), 94.7917% 0px, 95.8333% var(--crimp),
+        96.8750% 0px, 97.9167% var(--crimp), 98.9583% 0px, 100% var(--crimp),
+        100% calc(100% - var(--crimp)),
+        98.9583% 100%, 97.9167% calc(100% - var(--crimp)), 96.8750% 100%, 95.8333% calc(100% - var(--crimp)),
+        94.7917% 100%, 93.7500% calc(100% - var(--crimp)), 92.7083% 100%, 91.6667% calc(100% - var(--crimp)),
+        90.6250% 100%, 89.5833% calc(100% - var(--crimp)), 88.5417% 100%, 87.5000% calc(100% - var(--crimp)),
+        86.4583% 100%, 85.4167% calc(100% - var(--crimp)), 84.3750% 100%, 83.3333% calc(100% - var(--crimp)),
+        82.2917% 100%, 81.2500% calc(100% - var(--crimp)), 80.2083% 100%, 79.1667% calc(100% - var(--crimp)),
+        78.1250% 100%, 77.0833% calc(100% - var(--crimp)), 76.0417% 100%, 75.0000% calc(100% - var(--crimp)),
+        73.9583% 100%, 72.9167% calc(100% - var(--crimp)), 71.8750% 100%, 70.8333% calc(100% - var(--crimp)),
+        69.7917% 100%, 68.7500% calc(100% - var(--crimp)), 67.7083% 100%, 66.6667% calc(100% - var(--crimp)),
+        65.6250% 100%, 64.5833% calc(100% - var(--crimp)), 63.5417% 100%, 62.5000% calc(100% - var(--crimp)),
+        61.4583% 100%, 60.4167% calc(100% - var(--crimp)), 59.3750% 100%, 58.3333% calc(100% - var(--crimp)),
+        57.2917% 100%, 56.2500% calc(100% - var(--crimp)), 55.2083% 100%, 54.1667% calc(100% - var(--crimp)),
+        53.1250% 100%, 52.0833% calc(100% - var(--crimp)), 51.0417% 100%, 50.0000% calc(100% - var(--crimp)),
+        48.9583% 100%, 47.9167% calc(100% - var(--crimp)), 46.8750% 100%, 45.8333% calc(100% - var(--crimp)),
+        44.7917% 100%, 43.7500% calc(100% - var(--crimp)), 42.7083% 100%, 41.6667% calc(100% - var(--crimp)),
+        40.6250% 100%, 39.5833% calc(100% - var(--crimp)), 38.5417% 100%, 37.5000% calc(100% - var(--crimp)),
+        36.4583% 100%, 35.4167% calc(100% - var(--crimp)), 34.3750% 100%, 33.3333% calc(100% - var(--crimp)),
+        32.2917% 100%, 31.2500% calc(100% - var(--crimp)), 30.2083% 100%, 29.1667% calc(100% - var(--crimp)),
+        28.1250% 100%, 27.0833% calc(100% - var(--crimp)), 26.0417% 100%, 25.0000% calc(100% - var(--crimp)),
+        23.9583% 100%, 22.9167% calc(100% - var(--crimp)), 21.8750% 100%, 20.8333% calc(100% - var(--crimp)),
+        19.7917% 100%, 18.7500% calc(100% - var(--crimp)), 17.7083% 100%, 16.6667% calc(100% - var(--crimp)),
+        15.6250% 100%, 14.5833% calc(100% - var(--crimp)), 13.5417% 100%, 12.5000% calc(100% - var(--crimp)),
+        11.4583% 100%, 10.4167% calc(100% - var(--crimp)), 9.3750% 100%, 8.3333% calc(100% - var(--crimp)),
+        7.2917% 100%, 6.2500% calc(100% - var(--crimp)), 5.2083% 100%, 4.1667% calc(100% - var(--crimp)),
+        3.1250% 100%, 2.0833% calc(100% - var(--crimp)), 1.0417% 100%, 0% calc(100% - var(--crimp))
+      );
+      /* Outline follows the serrated clip (box-shadow would get clipped) */
+      filter:
+        drop-shadow(0 1.25px 0 var(--brand-ink))
+        drop-shadow(0 -1.25px 0 var(--brand-ink))
+        drop-shadow(1.25px 0 0 var(--brand-ink))
+        drop-shadow(-1.25px 0 0 var(--brand-ink));
       animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
     .col:nth-child(2) { animation-delay: 0.07s; }
