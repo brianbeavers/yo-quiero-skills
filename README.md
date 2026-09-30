@@ -1,63 +1,75 @@
 # Taco Bell Skills
 
-Cursor Agent Skills for presenting design options on a **Mild → Medium → Fire → Diablo** ambition spectrum (sauce-packet levels stakeholders already understand).
+Cursor Agent Skills for presenting design options on a **Mild → Hot → Fire → Diablo** ambition spectrum (sauce-packet levels stakeholders already understand).
 
-Nothing in the official Cursor / Claude / Codex libraries ships this ladder. These two skills encode it as explicit workflows you invoke by name.
+## Two skills — not one file
 
-## Skills
+| Skill | Folder | Invoke with | Job |
+| --- | --- | --- | --- |
+| **taco-bell-mode** | [`.cursor/skills/taco-bell-mode/`](.cursor/skills/taco-bell-mode/) | `taco-bell-mode` or `/taco-bell-mode` | From a PRD/brief → four ambition-level directions + **HTML board** |
+| **taco-bell-labeling** | [`.cursor/skills/taco-bell-labeling/`](.cursor/skills/taco-bell-labeling/) | `taco-bell-labeling` or `/taco-bell-labeling` | Drop heat labels **above** existing Figma frames / prototype screens |
 
-| Skill | Invoke with | What it does |
+Each skill is its own directory with its own `SKILL.md`. They share the ladder via
+[`taco-bell-mode/references/spectrum.md`](.cursor/skills/taco-bell-mode/references/spectrum.md).
+Both set `disable-model-invocation: true`, so the agent only loads them when you
+invoke them—not on every design chat.
+
+## How to invoke one vs the other
+
+1. Open **Agent** chat in a project that includes this repo (or copy `.cursor/skills/` into yours).
+2. Type `/` and search for the skill name, **or** start your message with the trigger phrase.
+3. Attach the right input:
+
+| You want… | Say… | Attach… |
 | --- | --- | --- |
-| **taco-bell-mode** | `taco-bell-mode` | From a PRD or thin brief, spin up **four** directions at increasing craft/complexity |
-| **taco-bell-labeling** | `taco-bell-labeling` | Drop spectrum labels **above** Figma frames, flows, or prototype screens |
+| Four new directions | `taco-bell-mode` | PRD, requirements, or thin brief |
+| Labels on existing designs | `taco-bell-labeling` | Figma file URL + which frames/flows |
 
-Both live under [`.cursor/skills/`](.cursor/skills/) and use `disable-model-invocation: true`, so they run when you call them—not on every design chat.
-
-## Spectrum
-
-| Heat | Meaning |
-| --- | --- |
-| **Mild** | Minimal safe change (optimization) or safest conventional path (net-new) |
-| **Medium** | Noticeable upgrade, still familiar |
-| **Fire** | Ambitious craft, new components/interactions, real eng lift |
-| **Diablo** | Swing for the fences — stretch / 200% |
-
-Full calibration: [`.cursor/skills/taco-bell-mode/references/spectrum.md`](.cursor/skills/taco-bell-mode/references/spectrum.md)
-
-## How to use in Cursor
-
-1. Open Agent chat in a project that includes this repo (or copy `.cursor/skills/` into yours).
-2. Type `/` and pick the skill, **or** say `taco-bell-mode` / `taco-bell-labeling` in the prompt.
-3. Attach a PRD/brief (mode) or a Figma file URL plus target frames (labeling).
-
-### Example — concept development
+### Example — mode
 
 ```text
 taco-bell-mode
 
-Here's our PRD for onboarding. Give me Mild → Diablo directions.
+Here's our PRD for team onboarding. Give me Mild → Diablo directions.
 ```
 
-### Example — stakeholder board chrome
+### Example — labeling
 
 ```text
 taco-bell-labeling
 
 Figma: <file url>
-Label the four concept columns Mild / Medium / Fire / Diablo and add the legend.
+Label the four concept columns Mild / Hot / Fire / Diablo and add the legend.
 ```
 
-## Figma prerequisite (labeling + Figma boards)
+## Spectrum (ambition levels)
 
-`taco-bell-labeling` (and Figma output from `taco-bell-mode`) needs:
+| Heat | Meaning |
+| --- | --- |
+| **Mild** | Minimal safe change (optimization) or safest conventional path (net-new) |
+| **Hot** | Noticeable upgrade, still familiar |
+| **Fire** | Ambitious craft, new components/interactions, real eng lift |
+| **Diablo** | Swing for the fences — stretch / 200% |
 
-1. **Figma MCP** connected and authenticated in Cursor
-2. Access to the target file
-3. The agent loading **`figma-use`** before any `use_figma` mutations (the skill instructs this)
+## Artifacts
 
-If Figma isn’t available, labeling falls back to a rename scheme + markdown legend; mode falls back to markdown heat cards or an HTML comparison board under `docs/taco-bell/`.
+- **taco-bell-mode (default):** HTML comparison board at `docs/taco-bell/<date>-<topic>/board.html`
+- **taco-bell-labeling:** Figma labels via Figma MCP + `figma-use`; if Figma isn’t connected, markdown rename map + legend under `docs/taco-bell/`
+
+### Figma prerequisite (labeling)
+
+1. Figma MCP connected and authenticated in Cursor  
+2. Access to the target file  
+3. Agent loads **`figma-use`** before any `use_figma` mutations (the skill instructs this)
 
 Label visual rules: [`.cursor/skills/taco-bell-labeling/references/label-spec.md`](.cursor/skills/taco-bell-labeling/references/label-spec.md)
+
+## Trial run (in this repo)
+
+Sample outputs from a dry-run brief live under [`docs/taco-bell/`](docs/taco-bell/):
+
+- Mode board: open the latest `board.html`
+- Labeling fallback: open the latest `labels.md` (used when Figma isn’t available)
 
 ## Repo layout
 
@@ -69,12 +81,14 @@ Label visual rules: [`.cursor/skills/taco-bell-labeling/references/label-spec.md
   taco-bell-labeling/
     SKILL.md
     references/label-spec.md
+docs/taco-bell/          # trial / generated boards
 README.md
 ```
 
 ## Install elsewhere
 
-Copy `.cursor/skills/taco-bell-mode` and `.cursor/skills/taco-bell-labeling` into another project’s `.cursor/skills/` (or your user-level `~/.cursor/skills/`). Restart or refresh Agent skills if they don’t appear under Customize → Skills.
+Copy both skill folders into another project’s `.cursor/skills/` (or `~/.cursor/skills/`).
+Refresh Customize → Skills if they don’t appear.
 
 ## Out of scope (for now)
 

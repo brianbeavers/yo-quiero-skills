@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taco Bell Mode — Team Onboarding</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --ink: #1a1714;
+      --muted: #5c564e;
+      --card: #fffdf9;
+      --line: #e4ddd3;
+      --mild: #2f6f3e;
+      --hot: #c47a1a;
+      --fire: #c43b1a;
+      --diablo: #5b1a1a;
+      --font: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Avenir Next", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 10% 0%, #efe6d8 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 10%, #e8dcc8 0%, transparent 50%),
+        var(--bg);
+      font-family: var(--sans);
+      line-height: 1.45;
+    }
+    header {
+      padding: 2rem 1.5rem 1rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    header h1 {
+      font-family: var(--font);
+      font-size: clamp(1.75rem, 3vw, 2.4rem);
+      font-weight: 600;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    header p { margin: 0; color: var(--muted); max-width: 52rem; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin: 1.25rem 0 0;
+      padding: 0.9rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      max-width: 1400px;
+    }
+    .legend span { font-size: 0.8rem; color: var(--muted); }
+    .legend strong { color: var(--ink); font-weight: 700; letter-spacing: 0.04em; }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(240px, 1fr));
+      gap: 1rem;
+      padding: 1rem 1.5rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1100px) {
+      .board { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .board { grid-template-columns: 1fr; }
+    }
+    .col {
+      background: var(--card);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      animation: rise 0.55s ease both;
+    }
+    .col:nth-child(2) { animation-delay: 0.08s; }
+    .col:nth-child(3) { animation-delay: 0.16s; }
+    .col:nth-child(4) { animation-delay: 0.24s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+    .label {
+      padding: 1rem 1rem 0.75rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.45rem;
+    }
+    .mild .badge { color: var(--mild); background: color-mix(in srgb, var(--mild) 16%, white); }
+    .hot .badge { color: var(--hot); background: color-mix(in srgb, var(--hot) 16%, white); }
+    .fire .badge { color: var(--fire); background: color-mix(in srgb, var(--fire) 16%, white); }
+    .diablo .badge { color: #fff; background: var(--diablo); }
+    .label h2 {
+      font-family: var(--font);
+      font-size: 1.25rem;
+      margin: 0 0 0.25rem;
+    }
+    .why { font-size: 0.82rem; color: var(--muted); margin: 0; }
+    .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.85rem; flex: 1; }
+    .thesis { font-size: 0.92rem; margin: 0; }
+    .section h3 {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 0.35rem;
+    }
+    .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.85rem; }
+    .section li { margin-bottom: 0.25rem; }
+    .meta {
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--line);
+      font-size: 0.8rem;
+    }
+    .meta p { margin: 0 0 0.4rem; }
+    .cost { font-weight: 700; }
+    footer {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer code { font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Taco Bell Mode — Team Onboarding</h1>
+    <p>
+      Same job for every column: get new ops hires productive on their first three workflows
+      without full-time senior shadowing. Only <strong>ambition level</strong> changes.
+    </p>
+    <div class="legend" aria-label="Spectrum legend">
+      <span><strong style="color:var(--mild)">MILD</strong> Safe / conventional</span>
+      <span><strong style="color:var(--hot)">HOT</strong> Clear step up</span>
+      <span><strong style="color:var(--fire)">FIRE</strong> Ambitious + eng lift</span>
+      <span><strong style="color:var(--diablo)">DIABLO</strong> Stretch / 200%</span>
+    </div>
+  </header>
+
+  <div class="board">
+    <article class="col mild">
+      <div class="label">
+        <div class="badge">MILD</div>
+        <h2>Checklist Home</h2>
+        <p class="why">Safest shippable path using patterns managers already know.</p>
+      </div>
+      <div class="body">
+        <p class="thesis">
+          A single onboarding page with a linear checklist of the three core workflows,
+          linked docs, and a “mark complete” control. Manager sees a simple progress %.
+        </p>
+        <div class="section">
+          <h3>UX bets</h3>
+          <ul>
+            <li>One screen: Today’s tasks + linked SOP</li>
+            <li>Manual complete / reopen by new hire</li>
+            <li>Manager widget: % done this week</li>
+            <li>Reuse existing table + button components</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Craft notes</h3>
+          <ul>
+            <li>Static layout, system type, no custom motion</li>
+            <li>Empty / loading / error via existing patterns</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <p><strong>Tradeoff:</strong> Fast to ship; little coaching or verification that they actually learned.</p>
+          <p class="cost">Build cost: ~2–4 days · low risk</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col hot">
+      <div class="label">
+        <div class="badge">HOT</div>
+        <h2>Guided Tracks</h2>
+        <p class="why">Noticeable upgrade—structured tracks without inventing a new product.</p>
+      </div>
+      <div class="body">
+        <p class="thesis">
+          Three role tracks with step-by-step modules (read → practice sandbox → quiz gate).
+          Progress is automatic where possible; managers get per-track status.
+        </p>
+        <div class="section">
+          <h3>UX bets</h3>
+          <ul>
+            <li>Track picker → module list → step detail</li>
+            <li>Lightweight quiz gate before “certified”</li>
+            <li>Manager board: who is stuck / overdue</li>
+            <li>Soft celebratory complete state</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Craft notes</h3>
+          <ul>
+            <li>Tasteful page transitions; progress ring</li>
+            <li>1–2 new step-list components</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <p><strong>Tradeoff:</strong> Better learning signal; still mostly content + forms, not live coaching.</p>
+          <p class="cost">Build cost: ~1–2 weeks · moderate content + quiz work</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col fire">
+      <div class="label">
+        <div class="badge">FIRE</div>
+        <h2>Live Shadow Mode</h2>
+        <p class="why">Ambitious: practice inside real UI with safe rails and new interaction model.</p>
+      </div>
+      <div class="body">
+        <p class="thesis">
+          Split-view coach: left rail narrates the workflow while the right pane is a
+          sandboxed clone of the live ops tool. Actions are scored; blockers summon a human coach.
+        </p>
+        <div class="section">
+          <h3>UX bets</h3>
+          <ul>
+            <li>Coach rail + sandbox app surface</li>
+            <li>Highlight targets; validate correct actions</li>
+            <li>“Call a coach” escalations with context dump</li>
+            <li>Manager timeline of attempts + friction points</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Craft notes</h3>
+          <ul>
+            <li>Orchestrated highlights, spotlight, micro-feedback</li>
+            <li>New sandbox shell + instrumentation hooks</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <p><strong>Tradeoff:</strong> High learning fidelity; needs sandbox fidelity and event plumbing.</p>
+          <p class="cost">Build cost: ~1–2 sprints · sandbox + telemetry risk</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col diablo">
+      <div class="label">
+        <div class="badge">DIABLO</div>
+        <h2>Adaptive Co-Pilot</h2>
+        <p class="why">Stretch moonshot—onboarding becomes a persistent AI co-worker, not a course.</p>
+      </div>
+      <div class="body">
+        <p class="thesis">
+          Always-on co-pilot that watches real (permissioned) sessions, intervenes only at
+          risk moments, generates personalized drills overnight, and grades readiness for
+          unsupervised shifts. Explicitly aspirational.
+        </p>
+        <div class="section">
+          <h3>UX bets</h3>
+          <ul>
+            <li>Ambient assist in live tool, not a separate LMS</li>
+            <li>Risk-triggered interventions + undo-safe actions</li>
+            <li>Overnight drill generator from yesterday’s misses</li>
+            <li>Manager “readiness score” with explainability</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Craft notes</h3>
+          <ul>
+            <li>Cinematic but calm interventions; voice optional</li>
+            <li>Model eval harness, privacy review, policy engine</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <p><strong>Tradeoff:</strong> Brand-defining if it works; multi-sprint R&amp;D and compliance load.</p>
+          <p class="cost">Build cost: multi-sprint stretch · AI + privacy + eval risk</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    <p><strong>Constants locked:</strong> SSO · role-based tasks · manager visibility · Chrome · WCAG AA · existing design tokens · no new mobile app.</p>
+    <p><strong>Mix ideas:</strong> Hot tracks + Fire sandbox for one workflow · Mild checklist now, Fire later · Fire UI with Diablo readiness scoring only.</p>
+    <p>Trial artifact from <code>taco-bell-mode</code> · <code>docs/taco-bell/2026-09-30-team-onboarding/board.html</code></p>
+  </footer>
+</body>
+</html>

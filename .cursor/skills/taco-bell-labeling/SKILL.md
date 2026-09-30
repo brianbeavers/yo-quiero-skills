@@ -1,7 +1,7 @@
 ---
 name: taco-bell-labeling
 description: >-
-  Drop Mild / Medium / Fire / Diablo labels above Figma design frames, flows, or
+  Drop Mild / Hot / Fire / Diablo labels above Figma design frames, flows, or
   prototype screens so stakeholders see ambition level at a glance. Use when the
   user says taco-bell-labeling, asks to sauce-label a board, or wants spectrum
   chrome on existing concepts. Not for inventing four new directions from a PRD
@@ -11,9 +11,9 @@ disable-model-invocation: true
 
 # Taco Bell Labeling — Spectrum Chrome for Stakeholders
 
-Place consistent **Mild / Medium / Fire / Diablo** labels **above** design
+Place consistent **Mild / Hot / Fire / Diablo** labels **above** design
 frames, flows, and prototype screens. The product UI stays untouched; the chrome
-communicates ambition.
+communicates ambition level.
 
 ## When to use
 
@@ -83,7 +83,7 @@ meeting preamble.
 Screenshot the labeled board (prefer `.screenshot()` on new trees via `$fig`).
 Check:
 
-- [ ] Correct heat names only (Mild / Medium / Fire / Diablo)
+- [ ] Correct heat names only (Mild / Hot / Fire / Diablo)
 - [ ] Labels above frames, not covering content
 - [ ] Consistent alignment and 24px gaps
 - [ ] Legend present
@@ -109,4 +109,4 @@ Reply with:
 
 - `taco-bell-labeling`
 - `/taco-bell-labeling`
-- “sauce-label” / “label the heats” / “Mild Medium Fire Diablo labels on this file”
+- “sauce-label” / “label the heats” / “Mild Hot Fire Diablo labels on this file”

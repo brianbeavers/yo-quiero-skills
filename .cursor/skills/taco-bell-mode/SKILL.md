@@ -1,7 +1,7 @@
 ---
 name: taco-bell-mode
 description: >-
-  Spin up four design directions on a Mild → Medium → Fire → Diablo ambition
+  Spin up four design directions on a Mild → Hot → Fire → Diablo ambition
   spectrum from a PRD or thin brief. Use when the user says taco-bell-mode,
   "sauce levels", "four heats", or wants stakeholder-ready concept options at
   increasing craft/complexity. Not for labeling existing Figma frames (use
@@ -12,8 +12,8 @@ disable-model-invocation: true
 # Taco Bell Mode — Four Heats From a Brief
 
 Generate **exactly four** concept directions for the same problem, calibrated to
-**Mild / Medium / Fire / Diablo**. Stakeholders should instantly understand how
-ambitious each option is—not just that the options look different.
+**Mild / Hot / Fire / Diablo** ambition levels. Stakeholders should instantly
+understand how ambitious each option is—not just that the options look different.
 
 ## When to use
 
@@ -66,7 +66,7 @@ Draft one concept per level. Check against `references/spectrum.md`:
 | Heat | Optimization brief | Net-new brief |
 | --- | --- | --- |
 | Mild | Minimal safe polish on what exists | Safest conventional product approach |
-| Medium | Noticeable upgrade, still familiar | Clear step up without reinventing |
+| Hot | Noticeable upgrade, still familiar | Clear step up without reinventing |
 | Fire | Ambitious surface redesign; new patterns | Complex interactions + new components + eng lift |
 | Diablo | 200% swing; may remix product assumptions | Brand-defining moonshot; mark as stretch |
 
@@ -79,32 +79,35 @@ Output in this order:
 
 1. **Brief playback** (3–6 bullets) + **Constants**
 2. **Heat comparison table** (one row per heat: concept name, one-line thesis, build cost)
-3. **Full heat cards** — Mild → Medium → Fire → Diablo, each with every field from
+3. **Full heat cards** — Mild → Hot → Fire → Diablo, each with every field from
    `references/spectrum.md` → Per-heat output fields
-4. **Mix prompts** — 2–3 suggested hybrids (e.g. “Medium IA + Fire motion”)
+4. **Mix prompts** — 2–3 suggested hybrids (e.g. “Hot IA + Fire motion”)
 5. **Decision ask** — which heat (or mix) to deepen next
 
 Keep prose tight. No lorem. Use real product language from the brief.
 
 ### 5. Surface artifacts
 
-**Default: Figma-first when Figma is available**
+**Default: HTML comparison board**
 
-If the user provides a Figma file URL/key and Figma MCP works:
+Ship a self-contained **HTML comparison board** under
+`docs/taco-bell/<YYYY-MM-DD>-<topic>/board.html` with four columns
+(Mild | Hot | Fire | Diablo), heat labels, concept titles, theses, UX bets,
+craft notes, tradeoffs, and build cost. Serve or open the file so stakeholders
+can scan ambition levels at a glance.
+
+Also summarize the four heats in chat (comparison table + decision ask).
+
+**Optional: Figma**
+
+If the user provides a Figma file URL/key and asks for Figma (or labeling next):
 
 1. Load `figma-use` (mandatory before any `use_figma` call)
 2. Create or clear a page named `Taco Bell Mode — <topic>`
-3. Lay out **four columns**: Mild | Medium | Fire | Diablo
-4. In each column: heat label (per labeling conventions), concept title, thesis
-   text, and placeholder frames for key screens (name them clearly)
-5. Optionally invoke `taco-bell-labeling` patterns so labels match stakeholder chrome
+3. Lay out four columns matching the HTML board
+4. Hand off to `taco-bell-labeling` for spectrum chrome above frames
 
-If Figma is unavailable or the user prefers speed:
-
-- Ship a self-contained **HTML comparison board** under
-  `docs/taco-bell/<YYYY-MM-DD>-<topic>/board.html` with four columns and the same
-  content, **or**
-- Ship markdown-only heat cards when visuals aren’t needed yet
+**Markdown-only** when the user explicitly wants prose and no board.
 
 State which artifact path you used.
 
@@ -113,7 +116,7 @@ State which artifact path you used.
 On follow-up:
 
 - Deepen one heat into flows/screens
-- Remix (“Fire interaction model at Medium cost”)
+- Remix (“Fire interaction model at Hot cost”)
 - Regenerate a single heat without touching the others
 - Hand off to `taco-bell-labeling` once frames exist in Figma
 

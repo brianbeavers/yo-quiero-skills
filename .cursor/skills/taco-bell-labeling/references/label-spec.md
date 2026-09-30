@@ -1,19 +1,18 @@
 # Taco Bell Label Spec
 
 Visual and copy rules for stakeholder labels placed **above** design frames,
-flows, and prototype screens. Shared with `taco-bell-mode` when creating Figma
-concept boards.
+flows, and prototype screens. Shared with `taco-bell-mode` when creating boards.
 
 ## Heat identity
 
 | Heat | Short label | Accent (approx) | Meaning (stakeholder one-liner) |
 | --- | --- | --- | --- |
 | Mild | MILD | `#2F6F3E` soft green | Safe, minimal change / conventional path |
-| Medium | MEDIUM | `#C47A1A` amber | Noticeable upgrade, still familiar |
+| Hot | HOT | `#C47A1A` amber | Noticeable upgrade, still familiar |
 | Fire | FIRE | `#C43B1A` red-orange | Ambitious craft + real complexity |
 | Diablo | DIABLO | `#5B1A1A` deep crimson | Stretch / swing for the fences |
 
-Do not invent alternate heat names on the canvas. Normalize Hot→Medium, Spicy→Fire.
+Do not invent alternate heat names on the canvas. Normalize Medium→Hot, Spicy→Fire.
 
 ## Label anatomy
 
@@ -54,7 +53,7 @@ Prefer existing text styles from the file’s design system when present. Fallba
 - Pill / rounded rect, padding ~6×10
 - Fill = heat accent at ~15% opacity (or solid accent with white text if file is dark)
 - Text = heat accent (or white on solid)
-- Characters exactly: `MILD` | `MEDIUM` | `FIRE` | `DIABLO`
+- Characters exactly: `MILD` | `HOT` | `FIRE` | `DIABLO`
 
 ### Naming in layers
 
@@ -78,10 +77,10 @@ Prefer existing text styles from the file’s design system when present. Fallba
 Create a frame `TB Spectrum Legend` on the same page:
 
 ```
-Mild → Medium → Fire → Diablo
+Mild → Hot → Fire → Diablo
 
 Mild    Safe / minimal change
-Medium  Clear step up, still familiar
+Hot     Clear step up, still familiar
 Fire    Ambitious craft + eng lift
 Diablo  Stretch — swing for the fences
 ```
@@ -100,6 +99,7 @@ When the user asks to label work that wasn’t created in taco-bell-mode:
 
 If Figma MCP is unavailable:
 
-- Propose rename scheme: `Mild — <Concept>`, `Medium — <Concept>`, …
+- Propose rename scheme: `Mild — <Concept>`, `Hot — <Concept>`, …
 - Provide a markdown legend the user can paste into FigJam/slides
 - Optionally write `docs/taco-bell/<date>-<topic>/labels.md` with the mapping table
+- For HTML boards from `taco-bell-mode`, ensure each column already has heat chrome matching this spec
