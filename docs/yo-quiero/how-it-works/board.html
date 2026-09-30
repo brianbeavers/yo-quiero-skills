@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>¡Yo Quiero! Mode</title>
-  <!--
-    Brand palette: #501098 purple, #9a23f8 bright purple, #d60068 magenta,
-    #fee101 yellow, #f4f4f4 / #585858 neutrals.
-    Display: Barlow Condensed. Body: DM Sans.
-  -->
+  <title>¡Yo Quiero! Mode: How it works</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
@@ -18,17 +13,13 @@
       --brand-purple-deep: #38096c;
       --brand-purple-bright: #9a23f8;
       --brand-magenta: #d60068;
-      --brand-magenta-hot: #ef2962;
-      --brand-pink: #ea42d1;
       --brand-yellow: #fee101;
-      --brand-orange: #ff8a2d;
       --brand-ink: #1b0026;
       --brand-muted: #585858;
       --brand-line: #dedede;
       --brand-wash: #f4f4f4;
       --brand-white: #ffffff;
 
-      /* Heat ladder accents (deeper packet fills) */
       --mild: #0f8a32;
       --mild-deep: #066224;
       --hot: #e85d0c;
@@ -59,7 +50,7 @@
       color: var(--brand-white);
       padding: 2.25rem 1.5rem 1.75rem;
     }
-    .hero-inner { max-width: 1400px; margin: 0 auto; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; }
     .hero h1 {
       font-family: var(--display);
       font-weight: 900;
@@ -68,42 +59,76 @@
       text-transform: uppercase;
       letter-spacing: 0.01em;
       margin: 0 0 0.75rem;
-      max-width: 16ch;
     }
-    .legend-wrap {
-      background: var(--brand-wash);
-      border-bottom: 1px solid var(--brand-line);
+    .hero p {
+      margin: 0;
+      max-width: 38rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: color-mix(in srgb, white 90%, var(--brand-purple-bright));
     }
-    .legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem 1.5rem;
-      max-width: 1400px;
+
+    .wrap {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0.85rem 1.5rem;
-      font-size: 0.85rem;
-      color: var(--brand-muted);
+      padding: 1.5rem 1.5rem 2.75rem;
+      background: var(--brand-wash);
     }
-    .legend strong {
+
+    .how {
+      background: var(--brand-white);
+      border: 2px solid var(--brand-ink);
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    .how h2 {
       font-family: var(--display);
       font-weight: 800;
-      letter-spacing: 0.08em;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 0.65rem;
+      color: var(--brand-purple);
+    }
+    .how ol {
+      margin: 0;
+      padding-left: 1.2rem;
       font-size: 0.95rem;
+    }
+    .how li { margin-bottom: 0.4rem; }
+    .how code {
+      font-family: var(--body);
+      font-size: 0.85rem;
+      background: var(--brand-wash);
+      border: 1px solid var(--brand-line);
+      padding: 0.05rem 0.3rem;
+    }
+
+    .example-label {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand-purple);
+      margin: 0 0 0.35rem;
+    }
+    .example-brief {
+      margin: 0 0 1rem;
+      color: var(--brand-muted);
+      font-size: 0.95rem;
+      max-width: 40rem;
     }
 
     .board {
       display: grid;
-      grid-template-columns: repeat(4, minmax(240px, 1fr));
-      gap: 1rem;
-      padding: 1.25rem 1.5rem 2.5rem;
-      max-width: 1400px;
-      margin: 0 auto;
-      background: var(--brand-wash);
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 0.85rem;
     }
-    @media (max-width: 1100px) {
+    @media (max-width: 900px) {
       .board { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 560px) {
       .board { grid-template-columns: 1fr; }
     }
 
@@ -115,7 +140,6 @@
       flex-direction: column;
       min-height: 100%;
       color: var(--brand-ink);
-      /* Tiny serrated top/bottom edges like a sealed sauce packet */
       clip-path: polygon(
         0% var(--crimp),
         1.0417% 0px, 2.0833% var(--crimp), 3.1250% 0px, 4.1667% var(--crimp),
@@ -168,49 +192,31 @@
         7.2917% 100%, 6.2500% calc(100% - var(--crimp)), 5.2083% 100%, 4.1667% calc(100% - var(--crimp)),
         3.1250% 100%, 2.0833% calc(100% - var(--crimp)), 1.0417% 100%, 0% calc(100% - var(--crimp))
       );
-      /* Outline follows the serrated clip (box-shadow would get clipped) */
       filter:
         drop-shadow(0 1.25px 0 var(--brand-ink))
         drop-shadow(0 -1.25px 0 var(--brand-ink))
         drop-shadow(1.25px 0 0 var(--brand-ink))
         drop-shadow(-1.25px 0 0 var(--brand-ink));
-      animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-    .col:nth-child(2) { animation-delay: 0.07s; }
-    .col:nth-child(3) { animation-delay: 0.14s; }
-    .col:nth-child(4) { animation-delay: 0.21s; }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: none; }
     }
 
     .label {
-      padding: 1rem 1rem 0.85rem;
+      padding: 0.85rem 0.9rem 0.75rem;
       border-bottom: 2px solid var(--brand-ink);
       color: #fff;
     }
-    .mild .label {
-      background: linear-gradient(165deg, var(--mild) 0%, var(--mild-deep) 100%);
-    }
-    .hot .label {
-      background: linear-gradient(165deg, var(--hot) 0%, var(--hot-deep) 100%);
-    }
-    .spicy .label {
-      background: linear-gradient(165deg, var(--spicy) 0%, var(--spicy-deep) 100%);
-    }
-    .inferno .label {
-      background: linear-gradient(165deg, var(--inferno) 0%, var(--inferno-deep) 100%);
-    }
+    .mild .label { background: linear-gradient(165deg, var(--mild) 0%, var(--mild-deep) 100%); }
+    .hot .label { background: linear-gradient(165deg, var(--hot) 0%, var(--hot-deep) 100%); }
+    .spicy .label { background: linear-gradient(165deg, var(--spicy) 0%, var(--spicy-deep) 100%); }
+    .inferno .label { background: linear-gradient(165deg, var(--inferno) 0%, var(--inferno-deep) 100%); }
 
     .badge {
       display: inline-block;
       font-family: var(--display);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 800;
       letter-spacing: 0.1em;
-      padding: 0.2rem 0.55rem 0.1rem;
-      border-radius: 2px;
-      margin-bottom: 0.4rem;
+      padding: 0.15rem 0.45rem 0.05rem;
+      margin-bottom: 0.35rem;
       text-transform: uppercase;
       color: #fff;
       background: transparent;
@@ -222,209 +228,167 @@
       border-color: var(--brand-yellow);
     }
 
-    .label h2 {
+    .label h3 {
       font-family: var(--display);
       font-weight: 800;
-      font-size: 1.65rem;
+      font-size: 1.35rem;
       line-height: 1;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      margin: 0 0 0.35rem;
+      margin: 0;
       color: #fff;
     }
-    .why {
-      font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.9);
+
+    .body { padding: 0.85rem 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.65rem; flex: 1; }
+    .idea {
       margin: 0;
+      font-size: 0.9rem;
       font-weight: 500;
     }
-
-    .body { padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
-    .thesis { font-size: 0.95rem; margin: 0; font-weight: 500; }
-
-    .section h3 {
-      font-family: var(--display);
-      font-size: 0.95rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--brand-purple);
-      margin: 0 0 0.35rem;
+    .signals {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.8rem;
+      color: var(--brand-muted);
     }
-    .section ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
-    .section li { margin-bottom: 0.28rem; }
-
-    .meta {
-      margin-top: auto;
-      padding-top: 0.85rem;
-      border-top: 2px dashed var(--brand-line);
-      font-size: 0.85rem;
+    .signals li {
+      margin-bottom: 0.3rem;
+      padding-left: 0.85rem;
+      position: relative;
     }
-    .meta p { margin: 0 0 0.4rem; }
+    .signals li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 1px;
+      background: currentColor;
+      opacity: 0.55;
+    }
     .cost {
+      margin-top: auto;
+      padding-top: 0.65rem;
+      border-top: 2px dashed var(--brand-line);
       font-family: var(--display);
       font-weight: 800;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
       color: var(--brand-purple);
     }
 
+    .invoke {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--brand-muted);
+    }
+    .invoke strong { color: var(--brand-purple); }
   </style>
 </head>
 <body>
   <header class="hero">
     <div class="hero-inner">
       <h1>¡Yo Quiero! Mode</h1>
+      <p>A Cursor skill that turns one brief into four ambition levels of the same idea.</p>
     </div>
   </header>
 
-  <div class="legend-wrap">
-    <div class="legend" aria-label="Spectrum legend">
-      <span><strong style="color:var(--mild-deep)">MILD</strong> Safe and simple</span>
-      <span><strong style="color:var(--hot-deep)">HOT</strong> A clear step up</span>
-      <span><strong style="color:var(--spicy-deep)">SPICY</strong> Bigger build, bigger bet</span>
-      <span><strong style="color:var(--inferno-deep)">INFERNO</strong> Swing for the fences</span>
+  <div class="wrap">
+    <section class="how">
+      <h2>How the skill works</h2>
+      <ol>
+        <li>You give it a PRD or a short brief.</li>
+        <li>It locks what must stay the same (the job, hard constraints).</li>
+        <li>It writes <strong>four takes</strong> of that same idea: Mild, Hot, Spicy, Inferno.</li>
+        <li>Each take differs by impact, eng effort, complexity, new components/motion, and how bluesky it is.</li>
+        <li>You pick a heat (or mix them), then deepen that direction.</li>
+      </ol>
+      <p style="margin: 0.85rem 0 0; font-size: 0.9rem; color: var(--brand-muted);">
+        Invoke with <code>yo-quiero-mode</code>. Pair with <code>yo-quiero-labeling</code> to stamp heats on Figma frames.
+      </p>
+    </section>
+
+    <p class="example-label">Tiny example</p>
+    <p class="example-brief">
+      Brief: “Help people leave a tip after checkout.” Same problem in every column. Only ambition changes.
+    </p>
+
+    <div class="board">
+      <article class="col mild">
+        <div class="label">
+          <div class="badge">Mild</div>
+          <h3>Add a tip field</h3>
+        </div>
+        <div class="body">
+          <p class="idea">A tip amount field on the existing checkout form. Defaults to none.</p>
+          <ul class="signals">
+            <li>Impact: small</li>
+            <li>New UI: one input</li>
+            <li>Motion: none</li>
+            <li>Risk: low</li>
+          </ul>
+          <p class="cost">About 1 day</p>
+        </div>
+      </article>
+
+      <article class="col hot">
+        <div class="label">
+          <div class="badge">Hot</div>
+          <h3>Tip presets</h3>
+        </div>
+        <div class="body">
+          <p class="idea">Quick picks (10% / 15% / 20% / custom) under the total, with a clear selected state.</p>
+          <ul class="signals">
+            <li>Impact: clearer conversion</li>
+            <li>New UI: chip group</li>
+            <li>Motion: light select</li>
+            <li>Risk: low to medium</li>
+          </ul>
+          <p class="cost">About 2 to 4 days</p>
+        </div>
+      </article>
+
+      <article class="col spicy">
+        <div class="label">
+          <div class="badge">Spicy</div>
+          <h3>Smart tip step</h3>
+        </div>
+        <div class="body">
+          <p class="idea">A short post-pay tip screen with suggested amounts based on order size, plus a thank-you moment.</p>
+          <ul class="signals">
+            <li>Impact: new step in flow</li>
+            <li>New UI: screen + logic</li>
+            <li>Motion: enter/exit</li>
+            <li>Risk: medium</li>
+          </ul>
+          <p class="cost">About 1 to 2 weeks</p>
+        </div>
+      </article>
+
+      <article class="col inferno">
+        <div class="label">
+          <div class="badge">Inferno</div>
+          <h3>Tip as social layer</h3>
+        </div>
+        <div class="body">
+          <p class="idea">Stretch: tip pools, crew shout-outs, optional public notes. Feels like a product of its own.</p>
+          <ul class="signals">
+            <li>Impact: new product surface</li>
+            <li>New UI: several systems</li>
+            <li>Motion: richer</li>
+            <li>Risk: high / bluesky</li>
+          </ul>
+          <p class="cost">Multi-sprint stretch</p>
+        </div>
+      </article>
     </div>
-  </div>
 
-  <div class="board">
-    <article class="col mild">
-      <div class="label">
-        <div class="badge">Mild</div>
-        <h2>Checklist Home</h2>
-        <p class="why">Simple checklist. Easy to ship. Familiar to everyone.</p>
-      </div>
-      <div class="body">
-        <p class="thesis">
-          One page with the three core workflows, links to the docs, and a mark-complete button.
-          Managers see a basic progress percentage.
-        </p>
-        <div class="section">
-          <h3>What you get</h3>
-          <ul>
-            <li>One screen: today's tasks plus linked SOPs</li>
-            <li>New hire marks items done (or reopens them)</li>
-            <li>Manager view: percent complete this week</li>
-            <li>Reuse components we already have</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3>Build notes</h3>
-          <ul>
-            <li>No custom animation</li>
-            <li>Uses existing empty, loading, and error states</li>
-          </ul>
-        </div>
-        <div class="meta">
-          <p><strong>Tradeoff:</strong> Ships fast. Doesn't prove they actually learned the work.</p>
-          <p class="cost">About 2 to 4 days. Low risk.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="col hot">
-      <div class="label">
-        <div class="badge">Hot</div>
-        <h2>Guided Tracks</h2>
-        <p class="why">More structure, still a normal product shape.</p>
-      </div>
-      <div class="body">
-        <p class="thesis">
-          Three role tracks. Each module is read, practice, then a short quiz.
-          Progress updates on its own where it can. Managers see status per track.
-        </p>
-        <div class="section">
-          <h3>What you get</h3>
-          <ul>
-            <li>Pick a track, then work through modules</li>
-            <li>Short quiz before someone is marked certified</li>
-            <li>Manager board: who's stuck or overdue</li>
-            <li>Simple done state when a track finishes</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3>Build notes</h3>
-          <ul>
-            <li>Light page transitions and a progress ring</li>
-            <li>One or two new list components</li>
-          </ul>
-        </div>
-        <div class="meta">
-          <p><strong>Tradeoff:</strong> Better sense of progress. Still mostly content and forms.</p>
-          <p class="cost">About 1 to 2 weeks. Content and quiz work.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="col spicy">
-      <div class="label">
-        <div class="badge">Spicy</div>
-        <h2>Live Practice</h2>
-        <p class="why">Practice in a fake version of the real tool, with coaching beside it.</p>
-      </div>
-      <div class="body">
-        <p class="thesis">
-          Split screen: coach notes on the left, practice app on the right.
-          The system checks their clicks. If they get stuck, they can call a real person.
-        </p>
-        <div class="section">
-          <h3>What you get</h3>
-          <ul>
-            <li>Coach panel next to a practice copy of the app</li>
-            <li>Highlights tell them where to click</li>
-            <li>Call a coach when they're blocked</li>
-            <li>Manager timeline of attempts and trouble spots</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3>Build notes</h3>
-          <ul>
-            <li>Highlights and click feedback</li>
-            <li>Needs a practice environment and event tracking</li>
-          </ul>
-        </div>
-        <div class="meta">
-          <p><strong>Tradeoff:</strong> Closer to real work. Harder to build and keep in sync.</p>
-          <p class="cost">About 1 to 2 sprints. Practice env is the hard part.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="col inferno">
-      <div class="label">
-        <div class="badge">Inferno</div>
-        <h2>Always-on Coach</h2>
-        <p class="why">Big swing. Help shows up in the live tool, not in a separate course.</p>
-      </div>
-      <div class="body">
-        <p class="thesis">
-          A coach sits in the real app (with permission), steps in only when something looks risky,
-          sends short drills overnight based on yesterday's misses, and tells managers when someone
-          is ready to work alone. This is the stretch option.
-        </p>
-        <div class="section">
-          <h3>What you get</h3>
-          <ul>
-            <li>Help inside the live tool, not a separate course site</li>
-            <li>Steps in at risky moments; easy to undo</li>
-            <li>Short drills overnight based on what went wrong</li>
-            <li>Manager view: ready or not, with a plain-language why</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3>Build notes</h3>
-          <ul>
-            <li>Quiet prompts in the product; voice is optional</li>
-            <li>Needs AI evals, privacy review, and clear rules</li>
-          </ul>
-        </div>
-        <div class="meta">
-          <p><strong>Tradeoff:</strong> Could be huge if it works. Lots of research, privacy, and risk.</p>
-          <p class="cost">Several sprints. Treat as a stretch goal.</p>
-        </div>
-      </div>
-    </article>
+    <p class="invoke">
+      <strong>Point of the board:</strong> show how the skill ladders one idea. Not a full product design.
+    </p>
   </div>
 </body>
 </html>

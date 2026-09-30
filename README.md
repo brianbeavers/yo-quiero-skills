@@ -64,12 +64,12 @@ Label the four concept columns Mild / Hot / Spicy / Inferno and add the legend.
 
 Label visual rules: [`.cursor/skills/yo-quiero-labeling/references/label-spec.md`](.cursor/skills/yo-quiero-labeling/references/label-spec.md)
 
-## Trial run (in this repo)
+## How-it-works demo (in this repo)
 
-Sample outputs from a dry-run brief live under [`docs/yo-quiero/`](docs/yo-quiero/):
+A short explainer board lives under [`docs/yo-quiero/`](docs/yo-quiero/):
 
-- Mode board: open the latest `board.html`
-- Labeling fallback: open the latest `labels.md` (used when Figma isn't available)
+- Open [`how-it-works/board.html`](docs/yo-quiero/how-it-works/board.html) for the spectrum + a tiny tip-checkout example
+- This is a demo of how the skill ladders one idea, not a full product design
 
 ## Repo layout
 
