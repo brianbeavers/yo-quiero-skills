@@ -235,21 +235,21 @@
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Taco Bell Mode · Ambition Spectrum</p>
+      <p class="eyebrow">Taco Bell Mode</p>
       <h1>Team Onboarding</h1>
       <p>
-        Same job for every column: get new ops hires productive on their first three workflows
-        without full-time senior shadowing. Only <strong>ambition level</strong> changes.
+        Goal is the same in every column: help new ops hires learn their first three
+        workflows without a senior sitting with them all week. What changes is how far we push it.
       </p>
     </div>
   </header>
 
   <div class="legend-wrap">
     <div class="legend" aria-label="Spectrum legend">
-      <span><strong style="color:var(--mild)">MILD</strong> Safe / conventional</span>
-      <span><strong style="color:#b85a00">HOT</strong> Clear step up</span>
-      <span><strong style="color:var(--fire)">FIRE</strong> Ambitious + eng lift</span>
-      <span><strong style="color:var(--diablo)">DIABLO</strong> Stretch / 200%</span>
+      <span><strong style="color:var(--mild)">MILD</strong> Safe and simple</span>
+      <span><strong style="color:#b85a00">HOT</strong> A clear step up</span>
+      <span><strong style="color:var(--fire)">FIRE</strong> Bigger build, bigger bet</span>
+      <span><strong style="color:var(--diablo)">DIABLO</strong> Swing for the fences</span>
     </div>
   </div>
 
@@ -258,32 +258,32 @@
       <div class="label">
         <div class="badge">Mild</div>
         <h2>Checklist Home</h2>
-        <p class="why">Safest shippable path using patterns managers already know.</p>
+        <p class="why">Simple checklist. Easy to ship. Familiar to everyone.</p>
       </div>
       <div class="body">
         <p class="thesis">
-          A single onboarding page with a linear checklist of the three core workflows,
-          linked docs, and a “mark complete” control. Manager sees a simple progress %.
+          One page with the three core workflows, links to the docs, and a mark-complete button.
+          Managers see a basic progress percentage.
         </p>
         <div class="section">
-          <h3>UX bets</h3>
+          <h3>What you get</h3>
           <ul>
-            <li>One screen: Today’s tasks + linked SOP</li>
-            <li>Manual complete / reopen by new hire</li>
-            <li>Manager widget: % done this week</li>
-            <li>Reuse existing table + button components</li>
+            <li>One screen: today's tasks plus linked SOPs</li>
+            <li>New hire marks items done (or reopens them)</li>
+            <li>Manager view: percent complete this week</li>
+            <li>Reuse components we already have</li>
           </ul>
         </div>
         <div class="section">
-          <h3>Craft notes</h3>
+          <h3>Build notes</h3>
           <ul>
-            <li>Static layout, system type, no custom motion</li>
-            <li>Empty / loading / error via existing patterns</li>
+            <li>No custom animation</li>
+            <li>Uses existing empty, loading, and error states</li>
           </ul>
         </div>
         <div class="meta">
-          <p><strong>Tradeoff:</strong> Fast to ship; little coaching or verification that they actually learned.</p>
-          <p class="cost">Build cost: ~2–4 days · low risk</p>
+          <p><strong>Tradeoff:</strong> Ships fast. Doesn't prove they actually learned the work.</p>
+          <p class="cost">About 2 to 4 days. Low risk.</p>
         </div>
       </div>
     </article>
@@ -292,32 +292,32 @@
       <div class="label">
         <div class="badge">Hot</div>
         <h2>Guided Tracks</h2>
-        <p class="why">Noticeable upgrade—structured tracks without inventing a new product.</p>
+        <p class="why">More structure, still a normal product shape.</p>
       </div>
       <div class="body">
         <p class="thesis">
-          Three role tracks with step-by-step modules (read → practice sandbox → quiz gate).
-          Progress is automatic where possible; managers get per-track status.
+          Three role tracks. Each module is read, practice, then a short quiz.
+          Progress updates on its own where it can. Managers see status per track.
         </p>
         <div class="section">
-          <h3>UX bets</h3>
+          <h3>What you get</h3>
           <ul>
-            <li>Track picker → module list → step detail</li>
-            <li>Lightweight quiz gate before “certified”</li>
-            <li>Manager board: who is stuck / overdue</li>
-            <li>Soft celebratory complete state</li>
+            <li>Pick a track, then work through modules</li>
+            <li>Short quiz before someone is marked certified</li>
+            <li>Manager board: who's stuck or overdue</li>
+            <li>Simple done state when a track finishes</li>
           </ul>
         </div>
         <div class="section">
-          <h3>Craft notes</h3>
+          <h3>Build notes</h3>
           <ul>
-            <li>Tasteful page transitions; progress ring</li>
-            <li>1–2 new step-list components</li>
+            <li>Light page transitions and a progress ring</li>
+            <li>One or two new list components</li>
           </ul>
         </div>
         <div class="meta">
-          <p><strong>Tradeoff:</strong> Better learning signal; still mostly content + forms, not live coaching.</p>
-          <p class="cost">Build cost: ~1–2 weeks · moderate content + quiz work</p>
+          <p><strong>Tradeoff:</strong> Better sense of progress. Still mostly content and forms.</p>
+          <p class="cost">About 1 to 2 weeks. Content and quiz work.</p>
         </div>
       </div>
     </article>
@@ -325,33 +325,33 @@
     <article class="col fire">
       <div class="label">
         <div class="badge">Fire</div>
-        <h2>Live Shadow Mode</h2>
-        <p class="why">Ambitious: practice inside real UI with safe rails and new interaction model.</p>
+        <h2>Live Practice</h2>
+        <p class="why">Practice in a fake version of the real tool, with coaching beside it.</p>
       </div>
       <div class="body">
         <p class="thesis">
-          Split-view coach: left rail narrates the workflow while the right pane is a
-          sandboxed clone of the live ops tool. Actions are scored; blockers summon a human coach.
+          Split screen: coach notes on the left, practice app on the right.
+          The system checks their clicks. If they get stuck, they can call a real person.
         </p>
         <div class="section">
-          <h3>UX bets</h3>
+          <h3>What you get</h3>
           <ul>
-            <li>Coach rail + sandbox app surface</li>
-            <li>Highlight targets; validate correct actions</li>
-            <li>“Call a coach” escalations with context dump</li>
-            <li>Manager timeline of attempts + friction points</li>
+            <li>Coach panel next to a practice copy of the app</li>
+            <li>Highlights tell them where to click</li>
+            <li>Call a coach when they're blocked</li>
+            <li>Manager timeline of attempts and trouble spots</li>
           </ul>
         </div>
         <div class="section">
-          <h3>Craft notes</h3>
+          <h3>Build notes</h3>
           <ul>
-            <li>Orchestrated highlights, spotlight, micro-feedback</li>
-            <li>New sandbox shell + instrumentation hooks</li>
+            <li>Highlights and click feedback</li>
+            <li>Needs a practice environment and event tracking</li>
           </ul>
         </div>
         <div class="meta">
-          <p><strong>Tradeoff:</strong> High learning fidelity; needs sandbox fidelity and event plumbing.</p>
-          <p class="cost">Build cost: ~1–2 sprints · sandbox + telemetry risk</p>
+          <p><strong>Tradeoff:</strong> Closer to real work. Harder to build and keep in sync.</p>
+          <p class="cost">About 1 to 2 sprints. Practice env is the hard part.</p>
         </div>
       </div>
     </article>
@@ -359,43 +359,43 @@
     <article class="col diablo">
       <div class="label">
         <div class="badge">Diablo</div>
-        <h2>Adaptive Co-Pilot</h2>
-        <p class="why">Stretch moonshot—onboarding becomes a persistent AI co-worker, not a course.</p>
+        <h2>Always-on Coach</h2>
+        <p class="why">Big swing. Help shows up in the live tool, not in a separate course.</p>
       </div>
       <div class="body">
         <p class="thesis">
-          Always-on co-pilot that watches real (permissioned) sessions, intervenes only at
-          risk moments, generates personalized drills overnight, and grades readiness for
-          unsupervised shifts. Explicitly aspirational.
+          A coach sits in the real app (with permission), steps in only when something looks risky,
+          sends short drills overnight based on yesterday's misses, and tells managers when someone
+          is ready to work alone. This is the stretch option.
         </p>
         <div class="section">
-          <h3>UX bets</h3>
+          <h3>What you get</h3>
           <ul>
-            <li>Ambient assist in live tool, not a separate LMS</li>
-            <li>Risk-triggered interventions + undo-safe actions</li>
-            <li>Overnight drill generator from yesterday’s misses</li>
-            <li>Manager “readiness score” with explainability</li>
+            <li>Help inside the live tool, not a separate course site</li>
+            <li>Steps in at risky moments; easy to undo</li>
+            <li>Short drills overnight based on what went wrong</li>
+            <li>Manager view: ready or not, with a plain-language why</li>
           </ul>
         </div>
         <div class="section">
-          <h3>Craft notes</h3>
+          <h3>Build notes</h3>
           <ul>
-            <li>Cinematic but calm interventions; voice optional</li>
-            <li>Model eval harness, privacy review, policy engine</li>
+            <li>Quiet prompts in the product; voice is optional</li>
+            <li>Needs AI evals, privacy review, and clear rules</li>
           </ul>
         </div>
         <div class="meta">
-          <p><strong>Tradeoff:</strong> Brand-defining if it works; multi-sprint R&amp;D and compliance load.</p>
-          <p class="cost">Build cost: multi-sprint stretch · AI + privacy + eval risk</p>
+          <p><strong>Tradeoff:</strong> Could be huge if it works. Lots of research, privacy, and risk.</p>
+          <p class="cost">Several sprints. Treat as a stretch goal.</p>
         </div>
       </div>
     </article>
   </div>
 
   <footer>
-    <p><strong>Constants locked:</strong> SSO · role-based tasks · manager visibility · Chrome · WCAG AA · existing design tokens · no new mobile app.</p>
-    <p><strong>Mix ideas:</strong> Hot tracks + Fire sandbox for one workflow · Mild checklist now, Fire later · Fire UI with Diablo readiness scoring only.</p>
-    <p>Trial artifact from <code>taco-bell-mode</code> · styled after <a href="https://www.tacobell.com/" style="color:var(--tb-purple)">tacobell.com</a> colors · <code>docs/taco-bell/2026-09-30-team-onboarding/board.html</code></p>
+    <p><strong>Must keep:</strong> SSO, role-based tasks, manager visibility, Chrome, WCAG AA, existing design tokens, no new mobile app.</p>
+    <p><strong>Mix ideas:</strong> Hot tracks with Fire practice on one workflow. Ship Mild now and Fire later. Fire UI with Diablo's ready-or-not score only.</p>
+    <p>Trial from <code>taco-bell-mode</code>. Colors from <a href="https://www.tacobell.com/" style="color:var(--tb-purple)">tacobell.com</a>.</p>
   </footer>
 </body>
 </html>
