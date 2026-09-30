@@ -268,10 +268,28 @@
       background: currentColor;
       opacity: 0.55;
     }
+    .cost-note {
+      margin: 0 0 0.85rem;
+      font-size: 0.85rem;
+      color: var(--brand-muted);
+      max-width: 42rem;
+    }
     .cost {
       margin-top: auto;
       padding-top: 0.65rem;
       border-top: 2px dashed var(--brand-line);
+    }
+    .cost-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--brand-muted);
+      margin-bottom: 0.15rem;
+    }
+    .cost-value {
+      display: block;
       font-family: var(--display);
       font-weight: 800;
       font-size: 0.95rem;
@@ -315,6 +333,10 @@
     <p class="example-brief">
       Brief: “Help people leave a tip after checkout.” Same problem in every column. Only ambition changes.
     </p>
+    <p class="cost-note">
+      Build cost at the bottom of each card is a rough guess of <strong>working days for eng and design</strong>
+      (focused build time). Not calendar days waiting on reviews, launches, or other teams.
+    </p>
 
     <div class="board">
       <article class="col mild">
@@ -330,7 +352,10 @@
             <li>Motion: none</li>
             <li>Risk: low</li>
           </ul>
-          <p class="cost">About 1 day</p>
+          <p class="cost">
+            <span class="cost-label">Eng + design working time</span>
+            <span class="cost-value">About 1 day</span>
+          </p>
         </div>
       </article>
 
@@ -347,7 +372,10 @@
             <li>Motion: light select</li>
             <li>Risk: low to medium</li>
           </ul>
-          <p class="cost">About 2 to 4 days</p>
+          <p class="cost">
+            <span class="cost-label">Eng + design working time</span>
+            <span class="cost-value">About 2 to 4 days</span>
+          </p>
         </div>
       </article>
 
@@ -364,7 +392,10 @@
             <li>Motion: enter/exit</li>
             <li>Risk: medium</li>
           </ul>
-          <p class="cost">About 1 to 2 weeks</p>
+          <p class="cost">
+            <span class="cost-label">Eng + design working time</span>
+            <span class="cost-value">About 1 to 2 weeks</span>
+          </p>
         </div>
       </article>
 
