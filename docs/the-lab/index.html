@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#1b0026; --wash:#f4f4f4; --purple:#501098; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"DM Sans",sans-serif; background:var(--wash); color:var(--ink); }
+    header {
+      background: linear-gradient(135deg, #38096c, #501098 55%, #71009f);
+      color: #fff;
+      padding: 1.75rem 1.5rem;
+    }
+    header h1 {
+      margin: 0;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      letter-spacing: 0.02em;
+    }
+    header p { margin: 0.5rem 0 0; opacity: 0.9; max-width: 36rem; }
+    main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .lab-card--yo-quiero {
+      --yq-purple: #501098;
+      --yq-ink: #1b0026;
+      --yq-wash: #f4f4f4;
+      --yq-mild: #0f8a32;
+      --yq-hot: #e85d0c;
+      --yq-spicy: #d1124f;
+      --yq-inferno: #3a1460;
+      font-family: "DM Sans", "IBM Plex Sans", system-ui, sans-serif;
+      background: #fff;
+      border: 2px solid var(--yq-ink);
+      padding: 1.15rem 1.2rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .lab-card--yo-quiero .lab-card__heats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .lab-card--yo-quiero .heat {
+      font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 0.2rem 0.45rem 0.12rem;
+    }
+    .lab-card--yo-quiero .heat.mild { background: var(--yq-mild); }
+    .lab-card--yo-quiero .heat.hot { background: var(--yq-hot); }
+    .lab-card--yo-quiero .heat.spicy { background: var(--yq-spicy); }
+    .lab-card--yo-quiero .heat.inferno { background: var(--yq-inferno); }
+    .lab-card--yo-quiero h3 {
+      margin: 0;
+      font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      font-weight: 900;
+      font-size: 1.55rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--yq-purple);
+      line-height: 1;
+    }
+    .lab-card--yo-quiero p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.4;
+      color: #585858;
+    }
+    .lab-card--yo-quiero .lab-card__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+    }
+    .lab-card--yo-quiero a {
+      font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: var(--yq-purple);
+      border: 2px solid var(--yq-ink);
+      padding: 0.4rem 0.7rem 0.3rem;
+    }
+    .lab-card--yo-quiero a.secondary {
+      background: var(--yq-wash);
+      color: var(--yq-ink);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Lab</h1>
+    <p>Cursor skill sets ready to try. Start with ¡Yo Quiero! Mode for Mild → Inferno design directions.</p>
+  </header>
+  <main>
+    <div class="grid">
+      <article class="lab-card lab-card--yo-quiero" id="yo-quiero-skills">
+        <div class="lab-card__heats" aria-label="Ambition spectrum">
+          <span class="heat mild">Mild</span>
+          <span class="heat hot">Hot</span>
+          <span class="heat spicy">Spicy</span>
+          <span class="heat inferno">Inferno</span>
+        </div>
+        <h3>¡Yo Quiero! Mode</h3>
+        <p>
+          Cursor skills that turn one brief into four ambition levels.
+          Ships an HTML comparison board; optional Figma heat labels.
+        </p>
+        <div class="lab-card__actions">
+          <a href="https://github.com/brianbeavers/yo-quiero-skills" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="secondary" href="../yo-quiero/how-it-works/board.html">How it works</a>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
