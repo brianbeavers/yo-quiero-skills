@@ -69,7 +69,7 @@ Label visual rules: [`.cursor/skills/yo-quiero-labeling/references/label-spec.md
 A short explainer board lives under [`docs/yo-quiero/how-it-works/`](docs/yo-quiero/how-it-works/):
 
 - Open [`board.html`](docs/yo-quiero/how-it-works/board.html) for the spectrum + three tiny examples
-- Placeholder GitHub links to the skills are on the page (`YOUR_ORG/YOUR_REPO` until you push)
+- GitHub links on the page point at `brianbeavers/yo-quiero-skills`
 - This is a demo of how the skill ladders one idea, not a full product design
 
 ## Repo layout
@@ -88,8 +88,14 @@ README.md
 
 ## Install elsewhere
 
-Copy both skill folders into another project’s `.cursor/skills/` (or `~/.cursor/skills/`).
+```bash
+git clone https://github.com/brianbeavers/yo-quiero-skills.git ~/.cursor/skills/yo-quiero
+```
+
+Or copy both skill folders into another project’s `.cursor/skills/`.
 Refresh Customize → Skills if they don’t appear.
+
+Publishing this repo to GitHub: see [PUBLISH_PERSONAL_GITHUB.md](PUBLISH_PERSONAL_GITHUB.md).
 
 ## Out of scope (for now)
 
