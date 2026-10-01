@@ -6,127 +6,177 @@
   <title>The Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root { --ink:#1b0026; --wash:#f4f4f4; --purple:#501098; }
+    :root {
+      --ink: #141414;
+      --muted: #6b6b6b;
+      --line: #e8e8e8;
+      --card: #ffffff;
+      --bg: #f7f7f5;
+      --dot: #d5d5d0;
+      --radius: 22px;
+      --font: "Outfit", "Segoe UI", sans-serif;
+    }
+
     * { box-sizing: border-box; }
-    body { margin:0; font-family:"DM Sans",sans-serif; background:var(--wash); color:var(--ink); }
-    header {
-      background: linear-gradient(135deg, #38096c, #501098 55%, #71009f);
-      color: #fff;
-      padding: 1.75rem 1.5rem;
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background-color: var(--bg);
+      background-image: radial-gradient(var(--dot) 1.1px, transparent 1.1px);
+      background-size: 18px 18px;
+      line-height: 1.45;
     }
-    header h1 {
-      margin: 0;
-      font-family: "Barlow Condensed", sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      letter-spacing: 0.02em;
+
+    .page {
+      width: min(1180px, calc(100% - 2.5rem));
+      margin: 0 auto;
+      padding: 2.75rem 0 4rem;
     }
-    header p { margin: 0.5rem 0 0; opacity: 0.9; max-width: 36rem; }
-    main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem;
     }
-    .lab-card--yo-quiero {
-      --yq-purple: #501098;
-      --yq-ink: #1b0026;
-      --yq-wash: #f4f4f4;
-      --yq-mild: #0f8a32;
-      --yq-hot: #e85d0c;
-      --yq-spicy: #d1124f;
-      --yq-inferno: #3a1460;
-      font-family: "DM Sans", "IBM Plex Sans", system-ui, sans-serif;
-      background: #fff;
-      border: 2px solid var(--yq-ink);
-      padding: 1.15rem 1.2rem 1.25rem;
+    @media (max-width: 860px) {
+      .page { width: min(1180px, calc(100% - 1.25rem)); padding-top: 1.5rem; }
+      .grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow:
+        0 1px 0 rgba(20, 20, 20, 0.04),
+        0 18px 40px rgba(20, 20, 20, 0.07);
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
+      min-height: 100%;
+      transition: transform 180ms ease, box-shadow 180ms ease;
     }
-    .lab-card--yo-quiero .lab-card__heats {
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 1px 0 rgba(20, 20, 20, 0.04),
+        0 22px 48px rgba(20, 20, 20, 0.11);
+    }
+
+    .project-card__media {
+      display: block;
+      aspect-ratio: 16 / 11;
+      background: #111;
+      overflow: hidden;
+    }
+    .project-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .project-card__body {
+      padding: 1.35rem 1.4rem 1.45rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
+      flex-direction: column;
+      gap: 0.55rem;
+      flex: 1;
     }
-    .lab-card--yo-quiero .heat {
-      font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
-      font-weight: 800;
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #fff;
-      padding: 0.2rem 0.45rem 0.12rem;
-    }
-    .lab-card--yo-quiero .heat.mild { background: var(--yq-mild); }
-    .lab-card--yo-quiero .heat.hot { background: var(--yq-hot); }
-    .lab-card--yo-quiero .heat.spicy { background: var(--yq-spicy); }
-    .lab-card--yo-quiero .heat.inferno { background: var(--yq-inferno); }
-    .lab-card--yo-quiero h3 {
+
+    .project-card h2 {
       margin: 0;
-      font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
-      font-weight: 900;
       font-size: 1.55rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--yq-purple);
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      font-weight: 450;
+      max-width: 36rem;
+    }
+
+    .project-card__link {
+      margin-top: 0.35rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--ink);
+      font-weight: 650;
+      font-size: 0.95rem;
+      text-decoration: none;
+      width: fit-content;
+    }
+    .project-card__link:hover { text-decoration: underline; text-underline-offset: 0.16em; }
+    .project-card__link .arrow {
+      font-size: 0.95em;
       line-height: 1;
     }
-    .lab-card--yo-quiero p {
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.4;
-      color: #585858;
-    }
-    .lab-card--yo-quiero .lab-card__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.35rem;
-    }
-    .lab-card--yo-quiero a {
-      font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
-      font-weight: 800;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #fff;
-      background: var(--yq-purple);
-      border: 2px solid var(--yq-ink);
-      padding: 0.4rem 0.7rem 0.3rem;
-    }
-    .lab-card--yo-quiero a.secondary {
-      background: var(--yq-wash);
-      color: var(--yq-ink);
+
+    .project-card__meta {
+      margin-top: auto !important;
+      padding-top: 0.85rem;
+      font-size: 0.82rem !important;
+      color: #8a8a8a !important;
+      font-weight: 500 !important;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>The Lab</h1>
-    <p>Cursor skill sets ready to try. Start with ¡Yo Quiero! Mode for Mild → Inferno design directions.</p>
-  </header>
-  <main>
+  <main class="page">
     <div class="grid">
-      <article class="lab-card lab-card--yo-quiero" id="yo-quiero-skills">
-        <div class="lab-card__heats" aria-label="Ambition spectrum">
-          <span class="heat mild">Mild</span>
-          <span class="heat hot">Hot</span>
-          <span class="heat spicy">Spicy</span>
-          <span class="heat inferno">Inferno</span>
+      <article class="project-card">
+        <a class="project-card__media" href="https://www.paycheckplanner.com/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/paycheck-planner-preview.png" alt="Paycheck Planner dashboard preview" />
+        </a>
+        <div class="project-card__body">
+          <h2>Paycheck Planner</h2>
+          <p>
+            A Duolingo-inspired dashboard for dividing monthly take-home pay across budget categories — with PDF import and shareable plans.
+          </p>
+          <a class="project-card__link" href="https://www.paycheckplanner.com/" target="_blank" rel="noopener noreferrer">
+            Open project <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="project-card__meta">React Native · Expo · Interaction</p>
         </div>
-        <h3>¡Yo Quiero! Mode</h3>
-        <p>
-          Cursor skills that turn one brief into four ambition levels.
-          Ships an HTML comparison board; optional Figma heat labels.
-        </p>
-        <div class="lab-card__actions">
-          <a href="https://github.com/brianbeavers/yo-quiero-skills" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a class="secondary" href="../yo-quiero/how-it-works/board.html">How it works</a>
+      </article>
+
+      <article class="project-card">
+        <a class="project-card__media" href="https://github.com/brianbeavers/global-design-stress-test-skill" target="_blank" rel="noopener noreferrer">
+          <img src="assets/stress-test-preview.png" alt="Global Design Stress Test matrix preview" />
+        </a>
+        <div class="project-card__body">
+          <h2>Global Design Stress Test</h2>
+          <p>
+            An open-source Cursor skill for stress-testing UI designs across 13+ languages, RTL layouts, font scaling, and design-time accessibility — with PASS/FAIL matrices and prioritized checklists.
+          </p>
+          <a class="project-card__link" href="https://github.com/brianbeavers/global-design-stress-test-skill" target="_blank" rel="noopener noreferrer">
+            Open source on GitHub <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="project-card__meta">Cursor skill · i18n · Accessibility</p>
+        </div>
+      </article>
+
+      <article class="project-card" id="yo-quiero-skills">
+        <a class="project-card__media" href="../yo-quiero/how-it-works/board.html">
+          <img src="assets/yo-quiero-preview.png" alt="¡Yo Quiero! Mode Mild Hot Spicy Inferno board preview" />
+        </a>
+        <div class="project-card__body">
+          <h2>¡Yo Quiero! Mode</h2>
+          <p>
+            Cursor skills that turn one brief into four ambition levels — Mild, Hot, Spicy, Inferno — with an HTML comparison board and optional Figma heat labels.
+          </p>
+          <a class="project-card__link" href="../yo-quiero/how-it-works/board.html">
+            Open project <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="project-card__meta">Cursor skill · Design ambition · Figma</p>
         </div>
       </article>
     </div>
