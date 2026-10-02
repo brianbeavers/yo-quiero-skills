@@ -66,11 +66,11 @@ Label visual rules: [`.cursor/skills/yo-quiero-labeling/references/label-spec.md
 
 ## How-it-works demo (in this repo)
 
-A short explainer board lives under [`docs/yo-quiero/how-it-works/`](docs/yo-quiero/how-it-works/):
+Laid-out demo (GitHub Pages):
 
-- Open [`board.html`](docs/yo-quiero/how-it-works/board.html) for the spectrum + three tiny examples
-- GitHub links on the page point at `brianbeavers/yo-quiero-skills`
-- This is a demo of how the skill ladders one idea, not a full product design
+**[¡Yo Quiero! Mode board](https://brianbeavers.github.io/yo-quiero-skills/yo-quiero/how-it-works/board.html)**
+
+Source file: [`docs/yo-quiero/how-it-works/board.html`](docs/yo-quiero/how-it-works/board.html) (the `/blob/` GitHub URL shows code only — use the Pages link above for the designed page).
 
 ## Repo layout
 
