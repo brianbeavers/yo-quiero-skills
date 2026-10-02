@@ -6,23 +6,23 @@
   <title>The Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink: #141414;
       --muted: #6b6b6b;
-      --line: #e8e8e8;
       --card: #ffffff;
       --bg: #f7f7f5;
       --dot: #d5d5d0;
       --radius: 22px;
-      --font: "Outfit", "Segoe UI", sans-serif;
+      --display: "Fraunces", "Times New Roman", serif;
+      --body: "Outfit", "Segoe UI", sans-serif;
     }
 
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
     body {
-      font-family: var(--font);
+      font-family: var(--body);
       color: var(--ink);
       background-color: var(--bg);
       background-image: radial-gradient(var(--dot) 1.1px, transparent 1.1px);
@@ -80,17 +80,18 @@
     }
 
     .project-card__body {
-      padding: 1.35rem 1.4rem 1.45rem;
+      padding: 1.45rem 1.5rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.55rem;
+      gap: 0.6rem;
       flex: 1;
     }
 
     .project-card h2 {
       margin: 0;
-      font-size: 1.55rem;
-      font-weight: 750;
+      font-family: var(--display);
+      font-size: 1.7rem;
+      font-weight: 600;
       letter-spacing: -0.02em;
       line-height: 1.15;
     }
@@ -104,17 +105,20 @@
     }
 
     .project-card__link {
-      margin-top: 0.35rem;
+      margin-top: 0.4rem;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
       color: var(--ink);
-      font-weight: 650;
+      font-weight: 700;
       font-size: 0.95rem;
       text-decoration: none;
       width: fit-content;
     }
-    .project-card__link:hover { text-decoration: underline; text-underline-offset: 0.16em; }
+    .project-card__link:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+    }
     .project-card__link .arrow {
       font-size: 0.95em;
       line-height: 1;
@@ -122,7 +126,7 @@
 
     .project-card__meta {
       margin-top: auto !important;
-      padding-top: 0.85rem;
+      padding-top: 0.9rem;
       font-size: 0.82rem !important;
       color: #8a8a8a !important;
       font-weight: 500 !important;
@@ -158,22 +162,22 @@
             An open-source Cursor skill for stress-testing UI designs across 13+ languages, RTL layouts, font scaling, and design-time accessibility — with PASS/FAIL matrices and prioritized checklists.
           </p>
           <a class="project-card__link" href="https://github.com/brianbeavers/global-design-stress-test-skill" target="_blank" rel="noopener noreferrer">
-            Open source on GitHub <span class="arrow" aria-hidden="true">↗</span>
+            Open project <span class="arrow" aria-hidden="true">↗</span>
           </a>
           <p class="project-card__meta">Cursor skill · i18n · Accessibility</p>
         </div>
       </article>
 
       <article class="project-card" id="yo-quiero-skills">
-        <a class="project-card__media" href="../yo-quiero/how-it-works/board.html">
+        <a class="project-card__media" href="https://github.com/brianbeavers/yo-quiero-skills" target="_blank" rel="noopener noreferrer">
           <img src="assets/yo-quiero-preview.png" alt="¡Yo Quiero! Mode Mild Hot Spicy Inferno board preview" />
         </a>
         <div class="project-card__body">
           <h2>¡Yo Quiero! Mode</h2>
           <p>
-            Cursor skills that turn one brief into four ambition levels — Mild, Hot, Spicy, Inferno — with an HTML comparison board and optional Figma heat labels.
+            An open-source Cursor skill for turning one brief into four ambition levels — Mild, Hot, Spicy, Inferno — with an HTML comparison board and optional Figma heat labels.
           </p>
-          <a class="project-card__link" href="../yo-quiero/how-it-works/board.html">
+          <a class="project-card__link" href="https://github.com/brianbeavers/yo-quiero-skills" target="_blank" rel="noopener noreferrer">
             Open project <span class="arrow" aria-hidden="true">↗</span>
           </a>
           <p class="project-card__meta">Cursor skill · Design ambition · Figma</p>
