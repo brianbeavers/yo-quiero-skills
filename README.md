@@ -68,7 +68,7 @@ Label visual rules: [`.cursor/skills/yo-quiero-labeling/references/label-spec.md
 
 Laid-out demo (GitHub Pages):
 
-**[¡Yo Quiero! Mode board](https://brianbeavers.github.io/yo-quiero-skills/yo-quiero/how-it-works/board.html)**
+**[¡Yo Quiero! Mode board](https://brianbeavers.github.io/cursor-skills/yo-quiero/how-it-works/board.html)**
 
 Source file: [`docs/yo-quiero/how-it-works/board.html`](docs/yo-quiero/how-it-works/board.html) (the `/blob/` GitHub URL shows code only — use the Pages link above for the designed page).
 
@@ -89,7 +89,7 @@ README.md
 ## Install elsewhere
 
 ```bash
-git clone https://github.com/brianbeavers/yo-quiero-skills.git ~/.cursor/skills/yo-quiero
+git clone https://github.com/brianbeavers/cursor-skills.git ~/.cursor/skills/yo-quiero
 ```
 
 Or copy both skill folders into another project’s `.cursor/skills/`.
