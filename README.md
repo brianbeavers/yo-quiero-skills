@@ -64,11 +64,6 @@ Label the four concept columns Mild / Hot / Spicy / Inferno and add the legend.
 
 Label visual rules: [`.cursor/skills/yo-quiero-labeling/references/label-spec.md`](.cursor/skills/yo-quiero-labeling/references/label-spec.md)
 
-## The Lab card
-
-A skill card for this set lives at [`docs/the-lab/index.html`](docs/the-lab/index.html).
-Pasteable markup: [`docs/yo-quiero/lab-card-snippet.html`](docs/yo-quiero/lab-card-snippet.html).
-
 ## How-it-works demo (in this repo)
 
 A short explainer board lives under [`docs/yo-quiero/how-it-works/`](docs/yo-quiero/how-it-works/):
